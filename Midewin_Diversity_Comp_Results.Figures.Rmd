@@ -35,13 +35,13 @@ knitr::opts_chunk$set(echo = FALSE, warning=FALSE, message=FALSE)
 
 **Files:**
 
-1. *Midewin_Cover_21_24.csv* - contains plant cover, codes, taxon, etc. (latest updated version Jan 2025)
+1. *Midewin_cover_clean.csv* - contains plant cover, codes, taxon, etc.
 
 2. *Midewin_Aug-Aug_Grazing_Influence_22_24.csv*- bison raster data for total (sum by year) and weighted total (sum of weighted by month/season) but aug year-1 to aug year current. (last updated Jan 2025)
 
-**Last Updated:** 2026-05-11
+**Last Updated:** 2026-06-05
 
-#### Libraries and Files
+#### Libraries, Files, Setup
 ```{r echo= FALSE}
 # setup
 rm(list=ls()) # clean up workspace 
@@ -53,11 +53,11 @@ library(car)     # For VIF collinearity check
 library(ggplot2) #visualization
 library(ggvegan) # an extension of ggplot2 designed for comm analyses using vegan package
 library(goeveg) #NMDS stress test
-library(lme4)    # For LMM and GLMM
+#library(lme4)    # For LMM and GLMM
 library(glmmTMB) # For advanced mixed models
-library(mgcv)    # For GAMs
+#library(mgcv)    # For GAMs
 library(emmeans) # For post-hoc analysis
-library(glmm) # glmms 
+#library(glmm) # glmms 
 library(MuMIn) #for model comparison and AIC 
 library(multcomp) #post hoc tests (Tukey HSD, GLHT)
 library(performance) # diagnostics, AIC 
@@ -70,43 +70,9 @@ library(ggordiplots) # helps with ordination plots using vegan and integrating t
 library(knitr) # help with merging data to tables 
 library(kableExtra) # formatting nicer tables 
 library(extrafont) #fonts for publication
-library(indicspecies) #for inidcator species analysis 
+#library(indicspecies) #for inidcator species analysis 
 
 ```
-
-
-```{r}
-
-setwd("~/Chapter 2 Plant Communities/Data/Analysis")
-
-cover<- read.csv("Midewin_Cover_21_24.csv")
-
-graze_Aug <-read.csv("Midewin_Aug-Aug_Grazing_Influence_22-24.csv")
-
-
-
-```
-
-
-#### Data cleaning  
-
-
-```{r}
-cover_clean <- cover %>% mutate(year = as.factor(year),block= as.factor(block), plot= as.factor(plot), cover = as.numeric(cover)) %>% 
-      filter(!(is.na(code) & (is.na(cover) | cover == 0))) # remove rows where code is missing or blank AND cover is na
-
-cover_clean<-cover_clean[, -c(15)] #remove last column with notes 
-
-#double check values we don't want any negatives or over 100 (though totals can be)
-#cover_clean %>% summarise(cover_min = min(cover, na.rm = TRUE), cover_max= max(cover, na.rm = TRUE)) #o to 100 only so thats good 
-
-
-#Change herbivory levels for XX to be our reference, control is ref by default
-
-cover_clean$herbivory_trt<-factor(cover_clean$herbivory_trt, levels=c("XX", "SX", "SB"))
-```
-
-
 
 Code for ggplot themes for publications
 ```{r}
@@ -141,17 +107,63 @@ text_theme<- function(base_size=12, font_family="Arial") {
 #height can be flexible usually 4-6 inches, max is ~9
 
 
-```
 
+## coding figures
 
-Code for figures to plot dodged/jittered points
-```{r}
 # to help with plotting my points that were shifting
 dodge_width<- 0.6 # will try this value first for horizontal grouping
 pos_dodge <- position_dodge(width = dodge_width) # will help with setting this as standard
 pos_jitter <- position_jitterdodge(jitter.width = 0.1, dodge.width = dodge_width, seed = 123) # jitter will help reduce over lapping points, but we don't want them to far apart (use width to adjust the left/right shifts) and jitterdoge combines both to separate groups and spread about our points
 pos_jitter2 <- position_jitterdodge(jitter.width = 0.2, dodge.width = dodge_width, seed = 123)
 ```
+
+
+
+<!-- ## Data clean -->
+
+<!-- #### Data cleaning   -->
+
+<!-- ## get rid of this and just provide clean data. -->
+<!-- ```{r} -->
+<!--  cover_clean <- cover %>% mutate(year = as.factor(year),block= as.factor(block), plot= as.factor(plot), cover = as.numeric(cover)) %>% -->
+<!--        filter(!(is.na(code) & (is.na(cover) | cover == 0))) # remove rows where code is missing or blank AND cover is na -->
+
+<!--  cover_clean<-cover_clean[, -c(15)] #remove last column with notes -->
+
+<!--  #double check values we don't want any negatives or over 100 (though totals can be) -->
+<!--  #cover_clean %>% summarise(cover_min = min(cover, na.rm = TRUE), cover_max= max(cover, na.rm = TRUE)) #o to 100 only so thats good -->
+
+
+<!--  #Change herbivory levels for XX to be our reference, control is ref by default -->
+
+<!--  cover_clean$herbivory_trt<-factor(cover_clean$herbivory_trt, levels=c("XX", "SX", "SB")) -->
+
+<!-- final <- cover_clean %>% -->
+<!--     filter(bison_pasture=="yes", year=="2024")  -->
+
+<!-- #write_csv(final, "Midewin_cover_clean.csv") -->
+<!-- ``` -->
+
+
+
+```{r}
+
+## set working directory to source file location
+
+cover_clean<- read.csv("Midewin_cover_clean.csv")
+
+
+graze_Aug <-read.csv("Midewin_Aug-Aug_Grazing_Influence_22-24.csv")
+
+
+
+```
+
+
+
+
+
+
 
 
 
@@ -171,19 +183,17 @@ specRich1<- cover_clean %>%
   group_by(year, block, plot, management_trt, herbivory_trt, bison_pasture) %>%  #do not include other columns here for now
   summarise(richness=n_distinct(code), .groups = "drop") #counts all distinct species per plot
 
-
-
 ```
 
 #### Add in bison covariate data
 ```{r}
 
-#plot and year need to be factors in order to merge with spec rich df
-graze_Aug$plot<-as.factor(graze_Aug$plot)
-graze_Aug$year<-as.factor(graze_Aug$year)
-
 # join bison cov df and specrich df into new single df
 specRich1<- specRich1 %>% left_join(graze_Aug %>% dplyr:: select(plot, year, Weighted_Grazing_Influence), by=c("plot", "year"))
+
+#plot and year need to be factors in order to merge with spec rich df
+specRich1$plot<-as.factor(specRich1$plot)
+specRich1$year<-as.factor(specRich1$year)
 
 #fill in missing or zero graze influence values
 #each block/year has one assigned bison influence level, needs to be assigned to all plots within each block
@@ -219,19 +229,6 @@ anova_w24
 ```
 
 
-```{r}
-# fit poisson and negbin 
-
-#poisson 
-#glmm_richw24_p <- glmmTMB (richness~herbivory_trt*management_trt+(1|block/plot), data = rich_W24, family = poisson)
-#summary(glmm_richw24_p) 
-#AIC 347 
-
-#glmm_richw24_nb<- glmmTMB (richness~herbivory_trt*management_trt+(1|block/plot), data = rich_W24, family = nbinom2())
-#summary(glmm_richw24_nb) 
-#AIC 349 
-```
-
 #### Check assumptions
 
 ```{r,results='hide', fig.show='hide'}
@@ -241,40 +238,9 @@ plot(sim_glmm_W24) #QQ plot is alright and residual vs predicted looks good
 testResiduals(sim_glmm_W24) 
 #KS test p>0.05, residuals are uniform, model is good fit
 #dispersion test came out okay
-#outliers only one detected, no excessive outliers
-check_model(glmm_richW24)
 ```
 
 
-```{r}
-#Poisson model is overdispered and negbin is not a good fit either. So even though richness is a count we can use Guassian for our GLMM
-
-
-
-#check assumptions
-#sim_glmm_W24_p<-simulateResiduals(glmm_richw24_p)
-#plot(sim_glmm_W24_p) 
-#testResiduals(sim_glmm_W24_p) 
-#testDispersion(sim_glmm_W24_p)
-
-# QQ doesn't look as good due to deviation
-#residual vs predicted quantile deviation detected
-#KS p =0.06
-#Diserpsions p< 0.05 ***** 
-
-
-
-#check assumptions
-#sim_glmm_W24_nb<-simulateResiduals(glmm_richw24_nb)
-#plot(sim_glmm_W24_nb) 
-#testResiduals(sim_glmm_W24_nb) 
-#testDispersion(sim_glmm_W24_nb)
-
-
-#QQ is not good at all, deviaton and KS test is significant p=0.04
-#same residual vs predicted issue
-# dispersion test p < 0.05
-```
 
 
 ####  r2 
