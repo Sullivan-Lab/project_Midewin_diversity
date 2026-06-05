@@ -119,40 +119,7 @@ pos_jitter2 <- position_jitterdodge(jitter.width = 0.2, dodge.width = dodge_widt
 
 
 
-## Data clean
-
-#### Data cleaning
-
-<!-- ## get rid of this and just provide clean data. -->
-<!-- ```{r} -->
-
-<!-- cover<- read.csv("Midewin_Cover_21_24.csv") -->
-
-<!--  cover_clean <- cover %>% mutate(year = as.factor(year),block= as.factor(block), plot= as.factor(plot), cover = as.numeric(cover)) %>% -->
-<!--        filter(!(is.na(code) & (is.na(cover) | cover == 0))) # remove rows where code is missing or blank AND cover is na -->
-
-<!--  cover_clean<-cover_clean[, -c(15)] #remove last column with notes -->
-
-<!--  #double check values we don't want any negatives or over 100 (though totals can be) -->
-<!--  #cover_clean %>% summarise(cover_min = min(cover, na.rm = TRUE), cover_max= max(cover, na.rm = TRUE)) #o to 100 only so thats good -->
-
-
-<!--  #Change herbivory levels for XX to be our reference, control is ref by default -->
-
-<!--  cover_clean$herbivory_trt<-factor(cover_clean$herbivory_trt, levels=c("XX", "SX", "SB")) -->
-
-<!-- final <- cover_clean %>% -->
-<!--     filter(bison_pasture=="yes", year=="2023" | year == "2024") -->
-
-<!-- cover_clean <- final -->
-
-
-<!-- #write_csv(final, "Midewin_cover_clean.csv") -->
-<!-- ``` -->
-
-
-
-```{r}
+```{r, echo = TRUE}
 
 ## set working directory to source file location
 
@@ -180,8 +147,8 @@ graze_Aug <-read_csv("Midewin_Aug-Aug_Grazing_Influence_22-24.csv")
 ## Species Richness 
 
 
-#### Calculate species richness 
-```{r}
+#### 1. Calculate species richness 
+```{r, echo =TRUE}
 #calculate species richness 
 specRich1<- cover_clean %>% 
   filter(live==1) %>%  # remove anything not a plant
@@ -192,7 +159,7 @@ specRich1<- cover_clean %>%
 
 ```
 
-#### Add in bison covariate data
+#### 2. Add in bison covariate data
 ```{r}
 #plot and year need to be factors in order to merge with spec rich df
 specRich1$plot<-as.factor(specRich1$plot)
@@ -219,8 +186,8 @@ specRich1<-specRich1 %>% mutate(Weighted_Grazing_Influence=ifelse(is.na(Weighted
 ```
 
 
-#### Fit the model 
-```{r,results='hide', fig.show='hide'}
+#### 3. Fit the model 
+```{r,echo = TRUE, fig.show='hide'}
 
 #Main results 2024 so remove east and other years
 rich_W24<- specRich1 %>% filter(year=="2024") 
@@ -246,20 +213,16 @@ anova_w24
 
 #### Check assumptions
 
-```{r,results='hide', fig.show='hide'}
+```{r, echo =FALSE, fig.show='hide'}
 #check assumptions
 sim_glmm_W24<-simulateResiduals(glmm_richW24)
 plot(sim_glmm_W24) #QQ plot is alright and residual vs predicted looks good
 testResiduals(sim_glmm_W24) 
 #KS test p>0.05, residuals are uniform, model is good fit
 #dispersion test came out okay
-```
 
+## r2
 
-
-
-####  r2 
-```{r,results='hide', fig.show='hide'}
 #what is the explained variance of our mixed effects model? 
 r2(glmm_richW24) # uses performance package 
 
@@ -412,7 +375,7 @@ pairs_w24m_df
 
 
 #### Calculate the difference from 2023 to 2024 in specrich
-```{r,results='hide', fig.show='hide'}
+```{r, echo =TRUE, fig.show='hide'}
 #filter data to only bison pasture and years 23-24
 rich23_24<-specRich1 %>% filter(bison_pasture=="yes", year %in% c("2023", "2024"))
 
@@ -428,7 +391,7 @@ rich_diff <- rich23_24 %>%
 
 
 #### Fit the model 
-```{r,results='hide', fig.show='hide'}
+```{r, echo =TRUE, fig.show='hide'}
 diff_glmm1<- glmmTMB(diff_richness~herbivory_trt*management_trt+ (1|block/plot), data=rich_diff, family = gaussian)
 summary(diff_glmm1)
 
@@ -446,7 +409,7 @@ anova_diff<-Anova(diff_glmm1, type="III")
 sim_glmm_diff1<-simulateResiduals(diff_glmm1)
 plot(sim_glmm_diff1) #QQ looks alright, no problems in residual/predicted plots
 testResiduals(sim_glmm_diff1) #KS good, no sign dispersion, maybe one outlier but n.s. 
-check_model(diff_glmm1)#looks alright 
+###check_model(diff_glmm1)#looks alright 
 ```
 
 
@@ -460,7 +423,7 @@ pairs(emmeans_diff1, adjust="tukey")
 emmeans_diff2<- emmeans(diff_glmm1,  ~pairwise~herbivory_trt, adjust="tukey", df = 49)
 ```
 
-Table: GLMM Delta Richness Model
+Table: GLMM Delta Richness, Summary of Model
 ```{r}
 #delta richness model summary
 glmm_diff_sum<-summary(diff_glmm1)
@@ -471,20 +434,22 @@ glmm_diff_df
 
 ```
 
-Table 2: ANova Delta Richness Model 
-```{r}
+Table 2: Anova Delta Richness Model 
+```{r, eval =TRUE}
 #use anova table for results section 
 #anova_diff
 
 #convert to df, keep column names and round up
 anova_diff_df<-as.data.frame(anova_diff) %>% rownames_to_column("Term") %>%  rename(Chisq = Chisq, Df= Df, p_value= `Pr(>Chisq)`)
 
+anova_diff_df
+
 #export to CSV 
 #write.csv(anova_diff_df, "Table 2 Anova Delta Model.csv", row.names = FALSE)
 ```
 
 Table: Post Hoc Comparisons Delta Richness 
-```{r}
+```{r, eval = TRUE}
 #extract data for post hoc comparisons tables 
 #emeansdiff 2 = herbivory trt alone
 #emeans diff 1 = m*h interction comparisons
@@ -501,6 +466,8 @@ pairs_diff1_df<-as.data.frame(contrast_diff) %>% rename(Management_Treatment = m
 #herbivory only contrasts for signif main effects
 pairs_diff2_df<-as.data.frame(contrast_diff2) %>% rename( Contrast = contrast, Estimate = estimate, SE=SE, Df= df, t_ratio = t.ratio, p_value= p.value) %>% mutate(across(c(Estimate, SE, t_ratio), ~round(.x, 3)), p_value=round(p_value, 4))
 
+
+pairs_diff2_df
 #write.csv(pairs_diff2_df, "Table_S4_PostHoc_BetweenHerb_DeltaRich.csv", row.names = FALSE)
 
 
@@ -737,7 +704,7 @@ ggplot(shannon_W24, aes(x= shannon))+
 ```
 
 #### Fit model for Shannon diversrity 
-```{r,results='hide', fig.show='hide'}
+```{r,eval =TRUE, fig.show='hide'}
 # model 
 shan_glmm1<-glmmTMB(shannon~herbivory_trt*management_trt+(1|block/plot), data=shannon_W24, family = gaussian )
 summary(shan_glmm1)
@@ -750,7 +717,7 @@ shan_anov
 
 sim_res_shan1<-simulate_residuals(shan_glmm1)
 plot(sim_res_shan1)
-check_model(shan_glmm1)
+#check_model(shan_glmm1)
 #looks fine  no issues with normality, qq plots good, posterior overlap is good, and no other red flags 
 #littler curviature in residuals vs fitted but not big deal 
 
@@ -760,7 +727,7 @@ check_model(shan_glmm1)
 
 
 Model summary: Summary of GLMM for shannon diversity  in response to management, herbivory and their interaction using data from 2024. 
-```{r,results='hide', fig.show='hide'}
+```{r,eval = TRUE, fig.show='hide'}
 
 glmm_shan_sum<-summary(shan_glmm1)
 
@@ -769,18 +736,19 @@ glmm_shan_df <- as.data.frame(glmm_shan_sum$coefficients$cond) %>% tibble::rowna
   mutate(across(c(Estimate, `Std. Error`, `z value`, `Pr(>|z|)`), ~round(.x, 3)))
 
 #model summary
-glmm_shann_df
+glmm_shan_df
 
 ```
 
 
 Table S2: Type III Wald Chisquare tests
-```{r,results='hide', fig.show='hide'}
+```{r, eval = TRUE, fig.show='hide'}
 #use anova table for results section 
 #shan_anov
 #convert to df, keep column names and round up
 anova_shan_df<-as.data.frame(shan_anov) %>% rownames_to_column("Term") %>% rename(Chisq = Chisq, Df= Df, p_value= `Pr(>Chisq)`)
 
+anova_shan_df
 #export to CSV 
 #write.csv(anova_shan_df, "Table S2_Shannon_Anova.csv", row.names = FALSE)
 ```
@@ -789,7 +757,7 @@ anova_shan_df<-as.data.frame(shan_anov) %>% rownames_to_column("Term") %>% renam
 
 
 Pielou evenness 
-```{r,results='hide', fig.show='hide'}
+```{r,eval = TRUE,fig.show='hide'}
 evenness_W24<-div_metrics %>% filter(year==2024, bison_pasture=="yes")
 
 even_glmm2<-glmmTMB(pielou_E ~herbivory_trt*management_trt+(1|block/plot), data=evenness_W24, family=gaussian)
@@ -802,7 +770,7 @@ pielou_anova<-Anova(even_glmm2)
 ```{r,results='hide', fig.show='hide'}
 sim_pielou_g<- simulateResiduals(even_glmm2)
 plot(sim_pielou_g)
-check_model(even_glmm2)
+#check_model(even_glmm2)
 testDispersion(sim_pielou_g)
 testZeroInflation(sim_pielou_g)
 
@@ -812,13 +780,13 @@ testZeroInflation(sim_pielou_g)
 ```
 
 
-```{r,results='hide', fig.show='hide'}
+```{r,eval = TRUE, fig.show='hide'}
 pielou_beta<-glmmTMB(pielou_E ~herbivory_trt*management_trt+ (1|block/plot), data=evenness_W24, family = beta_family(link = "logit"))
 summary(pielou_beta)
 
 sim_pielou_b<- simulateResiduals(pielou_beta)
 plot(sim_pielou_b)
-check_model(pielou_beta)
+#check_model(pielou_beta)
 testDispersion(sim_pielou_b)
 testZeroInflation(sim_pielou_b)
 
@@ -829,10 +797,10 @@ Same as above. Also beta model reinforces that the single coefficient is non-sig
 
 
 Table S3: Summary of anova for pielou's evennes in response to management, herbivory and their interaction using data from 2024. 
-```{r,results='hide', fig.show='hide'}
+```{r,eval = TRUE, fig.show='hide'}
 #convert to df, keep column names and round up
 anova_pielou_df<-as.data.frame(pielou_anova) %>% rownames_to_column("Term") %>% rename(Chisq = Chisq, Df= Df, p_value= `Pr(>Chisq)`)
-
+anova_pielou_df
 #export to CSV 
 #write.csv(anova_pielou_df, "TableS3_Pielou_Anova.csv", row.names = FALSE)
 
@@ -936,7 +904,7 @@ df_W24b$herbivory_trt<- as.factor(df_W24b$herbivory_trt)
 ```
 
 Permanova
-```{r, results='hide'}
+```{r,eval = TRUE, results='hide'}
 set.seed(100)
 #step 6: run permanova with adonis2
 permW24<-adonis2(cov_bray_dis_W24~management_trt*herbivory_trt+Weighted_Grazing_Influence, permutations = 999, data = df_W24b, strata = df_W24b$block, by="terms")
@@ -963,6 +931,8 @@ Table 3: PERMANOVA 2024
 permw24_df<- as.data.frame(permW24) %>% rownames_to_column("Term") %>% 
   rename(Df=Df, Sum_of_Sqs = SumOfSqs, R2 = R2, F=F, p_value= `Pr(>F)`) 
 
+permw24_df
+
 #write.csv(permw24_df, "Table 5 Permanova 2024.csv", row.names = FALSE)
 ```
 
@@ -973,6 +943,7 @@ Table S8 permdisp test
 
 full_permdisp_results_df<- as.data.frame(full_permdisp_results$tab ) %>% rownames_to_column("Term") %>%  rename( p_value= `Pr(>F)`) 
 
+full_permdisp_results_df
 #write.csv(full_permdisp_results_df, "Table BEtaDispersion_2024all.csv", row.names = FALSE)
 
 ```
@@ -1019,6 +990,7 @@ pairwise_df_inter_csv <-pairwise_df_inter %>% mutate( sig = case_when (`Pr(>F)`<
 #keep only the model rows with the important information
 filter(!is.na(F)) %>% dplyr::select(Comparison, Df, SumOfSqs, R2, F, `Pr(>F)`, sig) 
 
+pairwise_df_inter_csv
 #write.csv(pairwise_df_inter_csv, "Table Pairwise Permanova Interactions.csv", row.names = FALSE)
 ```
 
@@ -1039,6 +1011,7 @@ pairwise_df_h_csv <-pairwise_df_h %>% mutate( sig = case_when ( `Pr(>F)`<=0.001~
 #keep only the model rows with the important information
 filter(!is.na(F)) %>% dplyr::select(Comparison, Df, SumOfSqs, R2, F, `Pr(>F)`, sig) 
 
+pairwise_df_h_csv
 #write.csv(pairwise_df_h_csv, "Table Pairwise Permanova Herbivory.csv", row.names = FALSE)
 
 ```
@@ -1061,6 +1034,7 @@ pairwise_df_m_csv <-pairwise_df_m %>% mutate( sig = case_when (`Pr(>F)`<=0.001~ 
 #keep only the model rows with the important information
 filter(!is.na(F)) %>% dplyr::select(Comparison, Df, SumOfSqs, R2, F, `Pr(>F)`, sig) 
 
+pairwise_df_m_csv
 #write.csv(pairwise_df_m_csv, "Table Pairwise Permanova Management.csv", row.names = FALSE)
 
 ```
