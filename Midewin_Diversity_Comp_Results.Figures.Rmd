@@ -349,7 +349,7 @@ ggplot()+
   stat_pvalue_manual(data = pval_df, label = "p.label", xmin = "x.position1", xmax = "x.position2", y.position = "y.position", tip.length = 0.01, bracket.size = 0.8, color = "black", size = 6)
   
 #save the figure for high resolution
-ggsave ("Fig2_Richness2024.png",  width= 7.3, height=5, units = "in", dpi = 600) 
+ggsave ("Fig2.png",  width= 7.3, height=5, units = "in", dpi = 600) 
 ```
 
 
@@ -565,7 +565,7 @@ ggplot()+
   stat_pvalue_manual(data=pval_diff1_df, label = "p.label", xmin="x.position1", xmax = "x.position2", y.position = "y.position", tip.length = 0.01, bracket.size = 0.8, color = "black", size=6)
  
 #save our figures
-ggsave ("Fig3_DeltaSpecRIch.png",  width= 7.3, height=5, units = "in", dpi = 600) 
+ggsave ("Fig3.png",  width= 7.3, height=5, units = "in", dpi = 600) 
 ```
 
 
@@ -629,7 +629,7 @@ ggplot()+
   stat_pvalue_manual(data=pval_diff_mgmt, label = "p.label", xmin="x.position1", xmax = "x.position2", y.position = "y.position", tip.length = 0.01, bracket.size = 0.8, color = "black", size = 6)
   
 #save file
-  ggsave ("Fig S2_DeltaRichMgmt.png",  width= 7.3, height=5, units = "in", dpi = 600) 
+  ggsave ("FigS2.png",  width= 7.3, height=5, units = "in", dpi = 600) 
   
 ```
 
@@ -867,25 +867,7 @@ cover3<- cover2 %>%
 
 ```
 
-```{r}
-## double check data for outliers or anything funky before moving forward
-#cover3 %>% 
- # group_by(herbivory_trt, management_trt, year) %>% 
- # summarize(
- #   n              = n(),
-  #  n_cover_NA     = sum(is.na(cover)),
-  #  cover_min      = min(cover, na.rm = TRUE),
-  #  cover_max      = max(cover, na.rm = TRUE),
-  #  mean_cover     = mean(cover, na.rm = TRUE),
-  #  n_cover_negative = sum(cover < 0, na.rm = TRUE),
-  #  .groups = "drop"
- # ) %>% 
- # arrange(herbivory_trt, management_trt, year) %>% print(n=41)
 
-
-#found one extreme outlier, one comma were there shoudl have been . all NAs are removed and we have no negative values
-
-```
 
 ```{r}
 #step 1
@@ -914,9 +896,9 @@ df_W24b<-df_W24b %>% mutate(Weighted_Grazing_Influence=ifelse(is.na(Weighted_Gra
 
 ```{r}
 # and remove columns to create cover df and environmental df 
-cover_W24<- df_W24b[, -c(2:9)] # keep unique ID for merging purposes later on
+cover_W24<- df_W24b[, -c(2:9, 72)] # keep unique ID for merging purposes later on
 
-env_W24 <- df_W24b[, -c(7:83)] # may need to drop year/block/plot if using envfit (will show up on plots)
+env_W24 <- df_W24b[, -c(7:71)] # may need to drop year/block/plot if using envfit (will show up on plots)
 
 ```
 
@@ -939,8 +921,6 @@ dimcheckMDS(covTotal_W24, distance = "bray", k=6, trymax = 50, autotransform = F
 
 Tot_NMDS_W24<- metaMDS(covTotal_W24, distance = "bray", k=2, trymax = 500, maxit=500, autotransform = FALSE, expand = FALSE)
 
-#best solution repeated 2 time 
-
 ```
 
 
@@ -957,6 +937,7 @@ df_W24b$herbivory_trt<- as.factor(df_W24b$herbivory_trt)
 
 Permanova
 ```{r, results='hide'}
+set.seed(100)
 #step 6: run permanova with adonis2
 permW24<-adonis2(cov_bray_dis_W24~management_trt*herbivory_trt+Weighted_Grazing_Influence, permutations = 999, data = df_W24b, strata = df_W24b$block, by="terms")
 permW24
@@ -972,11 +953,10 @@ df_W24b$inter_group<-interaction(df_W24b$management_trt, df_W24b$herbivory_trt, 
 perm_24_inter<-betadisper(cov_bray_dis_W24, group = df_W24b$inter_group)
 full_permdisp_results<-permutest(perm_24_inter,  permutations = 999)
 
-#this was significant- we will reanalyze this on our subset data 
 ```
 
 
-Table: PERMANOVA 2024
+Table 3: PERMANOVA 2024
 ```{r}
 # extract permanova results for table and write as csv
 
@@ -986,7 +966,7 @@ permw24_df<- as.data.frame(permW24) %>% rownames_to_column("Term") %>%
 #write.csv(permw24_df, "Table 5 Permanova 2024.csv", row.names = FALSE)
 ```
 
-Table permdisp test
+Table S8 permdisp test
 ```{r}
 
 # extract permanova results for table and write as csv
@@ -1000,10 +980,12 @@ full_permdisp_results_df<- as.data.frame(full_permdisp_results$tab ) %>% rowname
 
 Post Hoc Comparisons 
 ```{r, results='hide'}
+set.seed(100)
 pairsW24_h<-pairwise.adonis2(cov_bray_dis_W24 ~herbivory_trt, data = df_W24b, permutations =999, p.adjust.methods ="holm")
 pairsW24_h
 #herbivory comparisons without interactions (Sb vs SX, p= 0.087 and SB vs XX p= 0.102, SX and XX p= 0.281) 
 
+set.seed(100)
 pairsW24_m<-pairwise.adonis2(cov_bray_dis_W24 ~management_trt, data = df_W24b, permutations =999, p.adjust.methods ="holm")
 pairsW24_m
 #management comparisons alone without herbivory * all plant communities are different 
@@ -1013,7 +995,7 @@ pairsW24_m
 
 
 #create interaction grouping variable-which we already have one "inter_group" 
-
+set.seed(100)
 pairsW24_inter<-pairwise.adonis2(cov_bray_dis_W24 ~inter_group, data = df_W24b, permutations =999, p.adjust.methods ="holm")
 pairsW24_inter
  # 
@@ -1021,7 +1003,7 @@ pairsW24_inter
 ```
 
 
-Table . Pairwise comparisons of plant community composition for interactive  effects in west pasture 2024. 
+Table S7. Pairwise comparisons of plant community composition for interactive  effects in west pasture 2024. 
 ```{r}
 pair_names<-setdiff(names(pairsW24_inter), "parent_call") #get rid of the parent call 
 
@@ -1040,7 +1022,7 @@ filter(!is.na(F)) %>% dplyr::select(Comparison, Df, SumOfSqs, R2, F, `Pr(>F)`, s
 #write.csv(pairwise_df_inter_csv, "Table Pairwise Permanova Interactions.csv", row.names = FALSE)
 ```
 
-Table Comparisons Comm Comp for Herbivory Main Effects 2024
+Table S6 Comparisons Comm Comp for Herbivory Main Effects 2024
 ```{r}
 #same as above
 
@@ -1061,7 +1043,7 @@ filter(!is.na(F)) %>% dplyr::select(Comparison, Df, SumOfSqs, R2, F, `Pr(>F)`, s
 
 ```
 
-Table Comparisons Management main effects Permanova 2024
+Table S6 Comparisons Management main effects Permanova 2024
 ```{r}
 
 #same as above
@@ -1129,7 +1111,7 @@ ggplot()+
   text_theme(base_size = 12)
   
 
-ggsave("Ch2_Figure5NMDS.png", width=7.3, height=5.5,units= "in", dpi=600)
+ggsave("Fig4.png", width=7.3, height=5.5,units= "in", dpi=600)
 
 
 ```
@@ -1157,9 +1139,11 @@ dist_cont <-vegdist(cov_cont[,-c(1)], method = "bray")
 
 env_cont$herbivory_trt<-as.factor(env_cont$herbivory_trt)
 
+set.seed(100)
 perm_cont<-adonis2(dist_cont ~ herbivory_trt +Weighted_Grazing_Influence,permutations = 999, data = env_cont, strata = env_cont$block, by = "terms")
 perm_cont
 
+set.seed(100)
 pairwise.adonis2(dist_cont ~herbivory_trt , data = env_cont, permutations =999, p.adjust.methods ="holm")
 
 beta_24c <- betadisper(dist_cont, group = env_cont$herbivory_trt)
@@ -1186,9 +1170,11 @@ dist_mow <-vegdist(cov_mow[,-c(1)], method = "bray")
 
 env_mow$herbivory_trt<-as.factor(env_mow$herbivory_trt)
 
+set.seed(100)
 perm_mow<-adonis2(dist_mow ~ herbivory_trt +Weighted_Grazing_Influence,permutations = 999, data = env_mow, strata = env_mow$block, by = "terms")
 perm_mow
 
+set.seed(100)
 pairwise.adonis2(dist_mow ~herbivory_trt, data = env_mow, permutations =999, p.adjust.methods ="holm")
 
 beta_24m <- betadisper(dist_mow, group = env_mow$herbivory_trt)
@@ -1217,9 +1203,11 @@ dist_fire <-vegdist(cov_fire[,-c(1)], method = "bray")
 
 env_fire$herbivory_trt<-as.factor(env_fire$herbivory_trt)
 
+set.seed(100)
 perm_fire<-adonis2(dist_fire ~ herbivory_trt+Weighted_Grazing_Influence,permutations = 999, data = env_fire, strata = env_fire$block, by = "terms")
 perm_fire
 
+set.seed(100)
 pairwise.adonis2(dist_fire ~herbivory_trt, data = env_fire, permutations =999, p.adjust.methods ="holm")
 
 beta_24f <- betadisper(dist_fire, group = env_fire$herbivory_trt)
@@ -1246,9 +1234,11 @@ dist_herb <-vegdist(cov_herb[,-c(1)], method = "bray")
 
 env_herb$herbivory_trt<-as.factor(env_herb$herbivory_trt)
 
+set.seed(100)
 perm_herb<-adonis2(dist_herb ~ herbivory_trt+Weighted_Grazing_Influence,permutations = 999, data = env_herb, strata = env_herb$block, by = "terms")
 perm_herb
 
+set.seed(100)
 herb_pairs<-pairwise.adonis2(dist_herb ~herbivory_trt, data = env_herb, permutations =999, p.adjust.methods ="holm")
 
 beta_24h <- betadisper(dist_herb, group =  env_herb$herbivory_trt)
@@ -1295,309 +1285,6 @@ ggplot( distance_df, aes(x= group, y= distance, color=group, fill=group))+
   theme(legend.position = "none", plot.margin = margin(t=10, r=35, b=10, l=10))+
   coord_cartesian(clip = "off")
 
-ggsave("Ch2_SI_Herb_Distance.png",width=7.3, height=6.5,units= "in", dpi=600)
+ggsave("FigS3.png",width=7.3, height=6.5,units= "in", dpi=600)
 
 ```
-
-Table: PERMANOVA Subset Herbicide
-```{r}
-# extract permanova results for table and write as csv
-
-perm_herb_df<- as.data.frame(perm_herb) %>% rownames_to_column("Term") %>% 
-  rename(Df=Df, Sum_of_Sqs = SumOfSqs, R2 = R2, F=F, p_value= `Pr(>F)`) 
-
-#write.csv(perm_herb_df, "Table Herb Permanova.csv", row.names = FALSE)
-```
-
-Table Comparisons Comm Comp for Herbicide Subset
-```{r}
-#same as above notes
-
-pair_names_herb<-setdiff(names(herb_pairs), "parent_call") #get rid of the parent call 
-
-pairwise_df_herb<-lapply(pair_names_herb, function(name){ # each one of our comparisosn has its own table we need to extract 
-  result<-herb_pairs[[name]]
-  result$Comparison<-name # this wil have our comparison names 
-  return(result)
-}) %>% bind_rows() # this should combine into one "df" 
-
-#add significant column for asterisks 
-pairwise_df_herb_csv <-pairwise_df_herb %>% mutate( sig = case_when (
-   `Pr(>F)`<=0.001~ "***", `Pr(>F)`<=0.01~ "**", `Pr(>F)`<=0.05~ "*", `Pr(>F)`<=0.1~ ".",TRUE ~ "")) %>% 
-#keep only the model rows with the important information
-filter(!is.na(F)) %>% dplyr::select(Comparison, Df, SumOfSqs, R2, F, `Pr(>F)`, sig) 
-
-#write.csv(pairwise_df_herb_csv, "Table Pairwise Subset Herbicide.csv", row.names = FALSE)
-
-```
-
-Table: Beta Dispersion for Herbicide Treatment 
-```{r,results='hide', fig.show='hide'}
-# rerun perm test
-bd_test <- permutest(beta_24h, pairwise = TRUE)
-bd_test
-# Extract the ANOVA- table data 
-bd_df <- as.data.frame(bd_test$tab) %>%   # $tab holds the ANOVA-style table
-rownames_to_column(var = "Term") %>% 
-  rename(Sum_of_Sqs = `Sum Sq`, Mean_Sq= `Mean Sq`, p_value= `Pr(>F)`) 
-
-#write.csv(bd_df, "Table S Herbicide_BetaDisp2024.csv", row.names = FALSE)
-
-
-```
-
-
-
-## 2023 & 2024 NMDS 
-
-#### data wrangling
-
-```{r,results='hide', fig.show='hide'}
- 
-
-df_34b<-df_wide %>% 
-  filter(year %in% c("2023", "2024")) %>%  
-  filter(bison_pasture=="yes") %>% 
-  filter(rowSums(.[,-c(1:9)])>0) # keep only rows that species/code columns are more than zero, rows with only zeros are filtered out
-
-#need a new data frame with our bison raster data 
-graze_Aug$plot<-as.factor(graze_Aug$plot) #everything needs to be the same to join
-graze_Aug$year<-as.factor(graze_Aug$year)
-df_34b$year <-as.factor(df_34b$year)
-df_34b$block<-as.factor(df_34b$block)
-df_34b$plot<-as.factor(df_34b$plot)
-
-# join both into new df
-df_34b<- df_34b %>% 
-  left_join(graze_Aug %>% 
-             dplyr:: select(plot, year, Weighted_Grazing_Influence), by=c("plot", "year"))
-
-#fill in  missing values since bison influence was on block/year and we want all plots to have same data 
-df_34b <-df_34b %>% group_by(block, year) %>% 
-  mutate(block_graze_value =first(Weighted_Grazing_Influence[!is.na(Weighted_Grazing_Influence)&Weighted_Grazing_Influence !=0]),Weighted_Grazing_Influence=ifelse(is.na(Weighted_Grazing_Influence)|Weighted_Grazing_Influence==0,   block_graze_value,Weighted_Grazing_Influence)) %>% ungroup() %>% dplyr::select(-block_graze_value)
-
-# fill in zero if it is missing now it is truly a zero for grazing influence
-df_34b<-df_34b %>% mutate(Weighted_Grazing_Influence=ifelse(is.na(Weighted_Grazing_Influence), 0, Weighted_Grazing_Influence))
-
-
-
-```
-
- 
-```{r,results='hide', fig.show='hide'}
-#remove unecessary columns in data to create cover and separate environmental data frames
-
-comm_34b <-df_34b[, -c(2:9,84)] # keep first column with unique ID to help merging later
-
-env_34b<-df_34b[, -c(10:83)] #removes all plant code/cover columns keeping only env data
-
-#standardize community matrix using site total with decostand
-covTot34b<-decostand(comm_34b [,-c(1)], "total") # divided cover values by margin total and removes first column unique ID 
-
-
-```
-
-```{r, results='hide', fig.show='hide'}
-# check the numbe rof dimension we need for the NMDS using Bray-Curtis dissmiliarity
-dimcheckMDS(covTot34b, distance = "bray", k=6, trymax = 100, autotransform = FALSE)
-
-#K=2 0.176
-
-```
-
-```{r, results='hide'}
-#run metamds 
-Tot_NMDS34b<-metaMDS(covTot34b, k=2, distance = "bray", trymax = 1000, autotransform = FALSE, expand = FALSE)
-#best solution was repeated 2 times
-```
-
-```{r, results='hide'}
-#need to standardize the data for dissmiliarity distances using the data that was standardized by site total above (with decostand=covTot...)
-cov_bray_dis34b<-vegdist(covTot34b, "bray")
-
-#need the data frame that has all the cover matrix plus env columns (original df_...)
-df_34b$management_trt<-as.factor(df_34b$management_trt) #make sure all treatments are factors
-df_34b$year<-as.factor(df_34b$year)
-df_34b$herbivory_trt<-as.factor(df_34b$herbivory_trt)
-
-
-
-perm2324<-adonis2(cov_bray_dis34b~management_trt*herbivory_trt*year+Weighted_Grazing_Influence, permutations = 999, data = df_34b,strata = df_34b$block, by="terms")
-
-
-#using by terms for an anova like partitioing of total variation, tests each term while holding others constant
-perm2324
-
-
-#no 3 way interaction
-#management and  herbiovry is nearly significant p=0.054
-#mgmt * year : p=0.001
-#all main effects <= 0.01
-
-
-
-```
-
-
-Table: PERMANOVA
-```{r,results='hide', fig.show='hide'}
-# extract permanova results for table and write as csv
-
-perm2324_df<- as.data.frame(perm2324) %>% rownames_to_column("Term") %>% 
-  rename( Sum_of_Sqs = SumOfSqs,  p_value= `Pr(>F)`) 
-
-#write.csv(perm2324_df, "Table SI Permanova2023_2024.csv", row.names = FALSE)
-```
-
-
-
-```{r,results='hide', fig.show='hide'}
-
-#build an interaction term to see if there are significant disperions between all the groupings
-df_34b$inter_group<-interaction(df_34b$management_trt, df_34b$herbivory_trt, df_34b$year, sep="_")
-
-perm_inter<-betadisper(cov_bray_dis34b, group = df_34b$inter_group)
-permutest(perm_inter, permutations = 999)
-#this was not significant* 
-
-
-```
-
-
-
-#### Visualization 2023-2024 West pasture
-
-```{r}
-
-#extract nmds scores using site scores
-nmds_df34b<-as.data.frame(scores(Tot_NMDS34b, display = "sites"))
-
-#add in the treatments factors from env data frame
-nmds_df34b$management_trt<-env_34b$management_trt
-nmds_df34b$year<-env_34b$year
-nmds_df34b$herbivory_trt<-env_34b$herbivory_trt
-nmds_df34b$bison_pasture<-env_34b$bison_pasture
-
-
-##  colors
-herbivory_colors <- c("SB" = "#440154FF", "SX" = "#35B779FF", "XX" = "#31688EFF")
-
-
-#calculate the centroids and SE for each group then we will multiply by 1.96 to get ~95%CI
-centroids_df34b<-nmds_df34b %>% group_by(management_trt, herbivory_trt,year) %>% 
-  summarise( NMDS1_mean =mean(NMDS1),
-             NMDS2_mean=mean(NMDS2),
-             NMDS1_se=sd(NMDS1)/sqrt(n()), 
-             NMDS2_se=sd(NMDS2)/sqrt(n()), 
-             .groups = "drop")
-
-
-#now we need trajectory to follow the centroids between years
-centroid_trajectory34b<-centroids_df34b %>% arrange(management_trt,herbivory_trt, year) %>% group_by(management_trt,herbivory_trt) %>% mutate(NMDS1_next =lead(NMDS1_mean), 
-          NMDS2_next = lead(NMDS2_mean),
-          year_next=lead(year), 
-          .groups="drop")
-         
-centroid_trajectory34b<-centroid_trajectory34b %>% 
-          filter(!is.na(NMDS1_next)) # keeps only those with next step
-
-centroids_df34b$year<-as.factor(centroids_df34b$year)
-centroid_trajectory34b$year<-as.factor(centroid_trajectory34b$year)
-
-
-  ggplot(centroids_df34b, aes(x=NMDS1_mean, y=NMDS2_mean, color=herbivory_trt, shape = year))+
-    facet_wrap(~management_trt)+
-          #geom_point(data = nmds_df34b, aes(x=NMDS1, y=NMDS2, color=herbivory_trt), size=2, alpha=0.2)+ #this adds in all plots but looks very messy, keep out for now
-           geom_point(size=4, alpha=1)+ #adds my centroids
-           geom_errorbar(aes( x= NMDS1_mean, ymin=NMDS2_mean-1.96*NMDS2_se, ymax = NMDS2_mean+1.96*NMDS2_se, color=herbivory_trt), width=0.05, alpha=0.8, linewidth=0.4) + 
-           geom_errorbarh(aes(y=NMDS2_mean, xmin=NMDS1_mean -1.96*NMDS1_se, xmax= NMDS1_mean+1.96*NMDS1_se, color=herbivory_trt), height=0.05, alpha=0.8, linewidth=0.4)+
-           geom_segment(data = centroid_trajectory34b, aes(x=NMDS1_mean, y=NMDS2_mean, xend=NMDS1_next, yend=NMDS2_next, color=herbivory_trt), arrow = arrow(length=unit(0.15, "cm")), size=1, alpha=0.8)+ #adds our trajectory
-           scale_color_manual(values=herbivory_colors,labels= c("SB"= "Bison + Small Mammals", "SX"= "Small Mammals", "XX"= "No Mammals"))+
-           scale_shape_manual(values = c(15,16))+
-           labs( x= "NMDS 1", y= "NMDS 2", color= "Consumer Treatment", shape= "Year")+ 
-           theme_minimal()+
-    guides(color=guide_legend(nrow = 1, byrow=TRUE), 
-           shape=guide_legend(nrow = 1, byrow=TRUE))+
-           theme (legend.position= "bottom", legend.box = "vertical", plot.margin = margin(t=10, r=35, b=10, l=10))+
-  coord_cartesian(clip = "off")+
-          text_theme(base_size = 12)
-  
- ggsave("Ch2_FigureS_2023_2024NMDS.png", width=7.3, height=6.5,units="in", dpi=600)
- 
-  
-```
-
-## 2021 NMDS West
-
-### Data Wrangling
-```{r}
-
-# step 1: subset data for only west pasture 
-df_W21<- df_wide %>% filter(bison_pasture== "yes") %>% filter(year=="2021")
-
-
-# and remove columns to create cover df and env df 
-cover_W21<- df_W21[, -c(2:9)] # keep unique ID for merging purposes later on
-
-env_W21 <- df_W21[, -c(7:83)] # may need to drop year/block/plot if using envfit (will show up on plots)
-
-```
-
-```{r}
-# step 2: standardize the community matrix using site total with decostand
-
-covTotal_W21 <- decostand(cover_W21 [, -c(1)], "total") # dividies by margin total and removes first column 
-
-```
-
-```{r, results='hide', fig.show='hide'}
- # step 3: check dimensions
-
-dimcheckMDS(covTotal_W21, distance = "bray", k=6, trymax = 50, autotransform = FALSE)
-#stress test for 2 is great (0.12)
-```
-
-```{r, results='hide'}
-#step 4: run metaMDS 
-
-Tot_NMDS_W21<- metaMDS(covTotal_W21, distance = "bray", k=2, trymax = 500, maxit=500, autotransform = FALSE, expand = FALSE)
-
-#best solution repeated 2x
-
-```
-
-
-```{r}
-#step 5: standardize the data for dissimilairty distnaces using the data that was standardized by site total baove with decostand 
-
-cov_bray_dis_W21<-vegdist(covTotal_W21, "bray")
-
-# make sure original data frame (subset matrix with env) treatments are all factors 
-df_W21$management_trt<-as.factor(df_W21$management_trt)
-df_W21$herbivory_trt<- as.factor(df_W21$herbivory_trt)
-
-```
-
-```{r, results='hide'}
-#step 6: run permanova with adonis2
-permW21<-adonis2(cov_bray_dis_W21~management_trt, permutations = 999, data = df_W21)
-permW21
-#no significant differences overall p=.291
-```
-
-
-
-Table S #. PERMANOVA results from plant community composition in the bison  pasture in 2021. 
-```{r}
-# extract permanova results for table and write as csv
-
-permW21_df<- as.data.frame(permW21) %>% rownames_to_column("Term") %>% 
-  rename( Sum_of_Sqs = SumOfSqs,  p_value= `Pr(>F)`) 
-
-#write.csv(permW21_df, "Table SI Permanova2021.csv", row.names = FALSE)
-```
-
-
-
-
-

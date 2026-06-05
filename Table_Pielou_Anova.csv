@@ -1,4 +1,0 @@
-"Term","Chisq","Df","p_value"
-"herbivory_trt",0.599383865340279,2,0.74104647773034
-"management_trt",2.33096586824529,3,0.506614638684445
-"herbivory_trt:management_trt",4.04467194650108,6,0.670630975594551
