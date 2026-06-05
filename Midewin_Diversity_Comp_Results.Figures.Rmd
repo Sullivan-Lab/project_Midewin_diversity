@@ -284,7 +284,7 @@ pairs_w24m
 
 
 
-#### Data visualization of Species Richness 2024 West Pasture 
+#### Fig. 2 -  Data visualization of Species Richness 2024 West Pasture 
 ```{r}
 #use emmeans for estimated marginal means with 95% CI
 #estimates are for each consumer treatment within each management treatment 
@@ -349,7 +349,7 @@ ggplot()+
   stat_pvalue_manual(data = pval_df, label = "p.label", xmin = "x.position1", xmax = "x.position2", y.position = "y.position", tip.length = 0.01, bracket.size = 0.8, color = "black", size = 6)
   
 #save the figure for high resolution
-ggsave ("Fig3_Richness2024.png",  width= 7.3, height=5, units = "in", dpi = 600) 
+ggsave ("Fig2_Richness2024.png",  width= 7.3, height=5, units = "in", dpi = 600) 
 ```
 
 
@@ -453,29 +453,25 @@ check_model(diff_glmm1)#looks alright
 #### Post-Hoc Comparisons 
 ```{r}
 #looks at herbivory within each management treatment just to see what differs 
-emmeans_diff1<- emmeans(diff_glmm1, specs= pairwise~herbivory_trt|management_trt, adjust="tukey")
+emmeans_diff1<- emmeans(diff_glmm1, ~herbivory_trt|management_trt, adjust="tukey", df = 49)
 pairs(emmeans_diff1, adjust="tukey")
 
 #compare herbivory treatments to each other
-emmeans_diff2<- emmeans(diff_glmm1, specs = pairwise~herbivory_trt, adjust="tukey")
-pairs(emmeans_diff2, adjust="tukey")
+emmeans_diff2<- emmeans(diff_glmm1,  ~pairwise~herbivory_trt, adjust="tukey", df = 49)
 ```
 
 Table: GLMM Delta Richness Model
 ```{r}
-#export tables to CSVs to drop into word doc
-
-#model summary, glmm will be added in the SI section 
+#delta richness model summary
 glmm_diff_sum<-summary(diff_glmm1)
 #make into df and round up 
 glmm_diff_df <- as.data.frame(glmm_diff_sum$coefficients$cond) %>% tibble::rownames_to_column("Term") %>% 
   mutate(across(c(Estimate, `Std. Error`, `z value`, `Pr(>|z|)`), ~round(.x, 3)))
+glmm_diff_df
 
-#export to csv
-write.csv(glmm_diff_df, "Table Glmm Delta Richness.csv", row.names = FALSE)
 ```
 
-Table: ANova Delta Richness Model 
+Table 2: ANova Delta Richness Model 
 ```{r}
 #use anova table for results section 
 #anova_diff
@@ -484,7 +480,7 @@ Table: ANova Delta Richness Model
 anova_diff_df<-as.data.frame(anova_diff) %>% rownames_to_column("Term") %>%  rename(Chisq = Chisq, Df= Df, p_value= `Pr(>Chisq)`)
 
 #export to CSV 
-write.csv(anova_diff_df, "Table 3 Anova Delta Model.csv", row.names = FALSE)
+write.csv(anova_diff_df, "Table 2 Anova Delta Model.csv", row.names = FALSE)
 ```
 
 Table: Post Hoc Comparisons Delta Richness 
@@ -500,22 +496,22 @@ contrast_diff2<- contrast(emmeans_diff2, method="pairwise", adjust="tukey")
 #herbivory and management group contrasts 
 pairs_diff1_df<-as.data.frame(contrast_diff) %>% rename(Management_Treatment = management_trt, Contrast = contrast, Estimate = estimate, SE=SE, Df= df, t_ratio = t.ratio, p_value= p.value) %>% mutate(across(c(Estimate, SE, t_ratio), ~round(.x, 3)), p_value=round(p_value, 4))
 
-write.csv(pairs_diff1_df, "Table_S_PostHoc_HerbMgmt_DeltaRichness.csv", row.names = FALSE)
+write.csv(pairs_diff1_df, "Table_S5_PostHoc_HerbMgmt_DeltaRichness.csv", row.names = FALSE)
 
 #herbivory only contrasts for signif main effects
 pairs_diff2_df<-as.data.frame(contrast_diff2) %>% rename( Contrast = contrast, Estimate = estimate, SE=SE, Df= df, t_ratio = t.ratio, p_value= p.value) %>% mutate(across(c(Estimate, SE, t_ratio), ~round(.x, 3)), p_value=round(p_value, 4))
 
-write.csv(pairs_diff2_df, "Table_S_PostHoc_BetweenHerb_DeltaRich.csv", row.names = FALSE)
+write.csv(pairs_diff2_df, "Table_S4_PostHoc_BetweenHerb_DeltaRich.csv", row.names = FALSE)
 
 
 ```
 
-#### Data Visualization Delta Richness Herbivory Treatment Main Effects
+#### Fig. 3: Data Visualization Delta Richness Herbivory Treatment Main Effects
 ```{r}
 # Plot the differences with error bars and custom colors for herbivory treatments
 
 #use emmeans for estimated marginal means with 95% CI
-emm_diff1 <-emmeans(diff_glmm1, ~herbivory_trt)
+emm_diff1 <-emmeans(diff_glmm1, ~herbivory_trt, df = 49)
 emm_df2 <-as.data.frame(emm_diff1)
 
 #uses tukey pairwise comparisons for our significant contrasts
@@ -569,16 +565,16 @@ ggplot()+
   stat_pvalue_manual(data=pval_diff1_df, label = "p.label", xmin="x.position1", xmax = "x.position2", y.position = "y.position", tip.length = 0.01, bracket.size = 0.8, color = "black", size=6)
  
 #save our figures
-ggsave ("Fig4_DeltaSpecRIch.png",  width= 7.3, height=5, units = "in", dpi = 600) 
+ggsave ("Fig3_DeltaSpecRIch.png",  width= 7.3, height=5, units = "in", dpi = 600) 
 ```
 
 
-### Supporting Information Figure Delta Richness Management X Herbivory Treatments 
+### Fig S2. Delta Richness Management X Herbivory Treatments 
 ```{r}
 # Plot the differences with error bars and custom colors for herbivory treatments
 
 #use emmeans for estimated marginal means with 95% CI
-emm_diff2 <-emmeans(diff_glmm1, ~herbivory_trt|management_trt)
+emm_diff2 <-emmeans(diff_glmm1, ~herbivory_trt|management_trt, df = 49)
 emm_df3 <-as.data.frame(emm_diff2)
 #uses tukey pairwise comparisons for our significant contrasts
 diff_mgmt_contrasts<-as.data.frame(pairs(emm_diff2, adjust="tukey"))
@@ -633,37 +629,18 @@ ggplot()+
   stat_pvalue_manual(data=pval_diff_mgmt, label = "p.label", xmin="x.position1", xmax = "x.position2", y.position = "y.position", tip.length = 0.01, bracket.size = 0.8, color = "black", size = 6)
   
 #save file
-  ggsave ("FigSI_DeltaRichMgmt.png",  width= 7.3, height=5, units = "in", dpi = 600) 
+  ggsave ("Fig S2_DeltaRichMgmt.png",  width= 7.3, height=5, units = "in", dpi = 600) 
   
 ```
-
-2021 Plant Spec Rich SB only plots though no herbivory treatments
-```{r,results='hide', fig.show='hide'}
-rich21<-specRich1 %>% filter(bison_pasture=="yes", year=="2021")
-
-glmm_richW21<-glmmTMB(richness~management_trt+(1|block), data = rich21, family = gaussian)
-summary(glmm_richW21)
-anova_rich21<-Anova(glmm_richW21, type="III")
-
-#emm_rich21<- emmeans(glmm_richW21, specs = pairwise~management_trt, adjust="tukey")
-#pairs(emm_rich21, adjust="tukey")
-```
-
-Table: ANova 2021 Richness Model 
-```{r}
-#convert to df, keep column names and round up
-anova_rich21_df<-as.data.frame(anova_rich21) %>% rownames_to_column("Term") %>% rename(Chisq = Chisq, Df= Df, p_value= `Pr(>Chisq)`)
-
-#export to CSV 
-write.csv(anova_rich21_df, "Table 3 Anova SpecRich2021.csv", row.names = FALSE)
-```
-
 
 ## Shannon and Evenness Metrics
 
 
 #### Data Cleaning and Set up 
 ```{r,results='hide', fig.show='hide'}
+
+cover <- cover_clean
+str(cover)
 cover4<-cover[, -c(11:15)] #remove extra columns with taxon names and etc for now 
 
 cover4$block<- as.factor(cover4$block) # change block/plot to  factor for data wrangling
@@ -713,8 +690,8 @@ Calculate shannon and evennes metrics
 #shannon diveristy using div_wide to species only matrix df
 #separate environmental and treatments first from abundance matrix
 #what is left wil be species only matrix with abundance data plus the unique id column
- div_env_df<-div_wide2[,-c(10:83)] #remove unneded columns
- species_matrix <-div_wide2[,-c(2:9,84)] #keep unique id column for merging later
+ div_env_df<-div_wide2[,-c(10:71)] #remove unneded columns
+ species_matrix <-div_wide2[,-c(2:9,72)] #keep unique id column for merging later
 
  #calculate shannon, richness and both evenness metrics  
  #remove the first column before calc. 
@@ -778,30 +755,26 @@ check_model(shan_glmm1)
 #littler curviature in residuals vs fitted but not big deal 
 
 
-#earlier modeling with gamma just to check showed a few margnial diagnositcs plots not looking so great but more importantly AIC was much higher for gamma (38.4) than for guassian (12.9), plus multpile error messages when runing th emodel. 
-
 ```
 
 
 
-Table : Summary of GLMM for shannon diversity  in response to management, herbivory and their interaction using data from 2024. 
+Model summary: Summary of GLMM for shannon diversity  in response to management, herbivory and their interaction using data from 2024. 
 ```{r,results='hide', fig.show='hide'}
 
-#export tables to CSVs to drop into word doc
-#model summary , glmm will be added in the SI section 
 glmm_shan_sum<-summary(shan_glmm1)
 
 #make into df and round up 
 glmm_shan_df <- as.data.frame(glmm_shan_sum$coefficients$cond) %>% tibble::rownames_to_column("Term") %>% 
   mutate(across(c(Estimate, `Std. Error`, `z value`, `Pr(>|z|)`), ~round(.x, 3)))
 
-#exprot to csv
-write.csv(glmm_shan_df, "Table Shannon_2024.csv", row.names = FALSE)
+#model summary
+glmm_shann_df
 
 ```
 
 
-Table : Type III Wald Chisquare tests
+Table S2: Type III Wald Chisquare tests
 ```{r,results='hide', fig.show='hide'}
 #use anova table for results section 
 #shan_anov
@@ -809,88 +782,15 @@ Table : Type III Wald Chisquare tests
 anova_shan_df<-as.data.frame(shan_anov) %>% rownames_to_column("Term") %>% rename(Chisq = Chisq, Df= Df, p_value= `Pr(>Chisq)`)
 
 #export to CSV 
-write.csv(anova_shan_df, "Table_Shannon_Anova.csv", row.names = FALSE)
+#write.csv(anova_shan_df, "Table S2_Shannon_Anova.csv", row.names = FALSE)
 ```
 
 
-Evar model
-```{r,results='hide', fig.show='hide'}
-#filter year and pasture
-evenness_W24<-div_metrics %>% filter(year==2024, bison_pasture=="yes")
 
-#check histogram
-ggplot(evenness_W24, aes(x= evar)) +
-  geom_histogram()+
-  theme_bw()+
- labs(title = "Distribution of evar Data", x= "evar", y= "Frequency")
-
-ggplot(evenness_W24, aes(x= pielou_E)) +
-  geom_histogram()+
-  theme_bw()+
- labs(title = "Distribution of pielou even Data", x= "pielou e", y= "Frequency")
-
-
-#bounded between 0-1 and slight skew for each one
-#try beta and maybe gaussian
-
-#range(evenness_W24$evar, na.rm = TRUE) #no zeros or 1s <- beta cannot handle exact zeros or ones
-#range(evenness_W24$pielou_E, na.rm = TRUE) #no zeros or 1s
-```
-
-
-```{r,results='hide', fig.show='hide'}
-even_glmm1<-glmmTMB(evar~herbivory_trt*management_trt+(1|block), data=evenness_W24, family=gaussian)
-summary(even_glmm1)
-evar_anova<-Anova(even_glmm1)
-#no significance using evar 
-#had to remove block/plot nesting due to warnings
-```
-
-```{r,results='hide', fig.show='hide'}
-sim_evar_g<- simulateResiduals(even_glmm1)
-plot(sim_evar_g)
-check_model(even_glmm1)
-testDispersion(sim_evar_g)
-testZeroInflation(sim_evar_g)
-
-#KS test is borderline but not signif
-#no dispersion, no strong outliers, no zero inflation
-#residuals versus fitted not the greatest 
-```
-
-```{r,results='hide', fig.show='hide'}
-evar_beta<-glmmTMB(evar~herbivory_trt*management_trt+ (1|plot), data=evenness_W24, family = beta_family(link = "logit"))
-summary(evar_beta)
-
-sim_evar_b<- simulateResiduals(evar_beta)
-plot(sim_evar_b)
-check_model(evar_beta)
-testDispersion(sim_evar_b)
-testZeroInflation(sim_evar_b)
-
-#overall fit is alright
-#KS is okay, variance okay outlier okay and uniformity close
-#residuals vs predicted looks better than guassian but guassian is easier
-
-
-```
-Although the bounded of the evenness indices and some residual patters would suggest we use  beta GLMMs instead which had margnially better assumptions checks since the Guassian models showed no strong overdispersion or zero inflation, will use that for ease and to keep model analysis similar as possible. Either way, there was no significant effects 
- 
-
-Table 5: Summary of anova for EVAR in response to management, herbivory and their interaction using data from 2024.
-```{r,results='hide', fig.show='hide'}
-#use anova table for results section 
-
-#convert to df, keep column names and round up
-anova_evar_df<-as.data.frame(evar_anova) %>% rownames_to_column("Term") %>% rename(Chisq = Chisq, Df= Df, p_value= `Pr(>Chisq)`)
-
-#export to CSV 
-write.csv(anova_evar_df, "Table_Evar_Anova.csv", row.names = FALSE)
-
-```
 
 Pielou evenness 
 ```{r,results='hide', fig.show='hide'}
+evenness_W24<-div_metrics %>% filter(year==2024, bison_pasture=="yes")
 
 even_glmm2<-glmmTMB(pielou_E ~herbivory_trt*management_trt+(1|block/plot), data=evenness_W24, family=gaussian)
 summary(even_glmm2)
@@ -928,16 +828,13 @@ testZeroInflation(sim_pielou_b)
 Same as above. Also beta model reinforces that the single coefficient is non-significant here. Will still use guassian model for results
 
 
-Table 5: Summary of anova for pielou's evennes in response to management, herbivory and their interaction using data from 2024. 
+Table S3: Summary of anova for pielou's evennes in response to management, herbivory and their interaction using data from 2024. 
 ```{r,results='hide', fig.show='hide'}
-#export tables to CSVs to drop into word doc
-#use anova table for results section 
-
 #convert to df, keep column names and round up
 anova_pielou_df<-as.data.frame(pielou_anova) %>% rownames_to_column("Term") %>% rename(Chisq = Chisq, Df= Df, p_value= `Pr(>Chisq)`)
 
 #export to CSV 
-write.csv(anova_pielou_df, "Table_Pielou_Anova.csv", row.names = FALSE)
+#write.csv(anova_pielou_df, "TableS3_Pielou_Anova.csv", row.names = FALSE)
 
 ```
 
