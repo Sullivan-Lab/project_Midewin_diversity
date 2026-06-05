@@ -119,12 +119,15 @@ pos_jitter2 <- position_jitterdodge(jitter.width = 0.2, dodge.width = dodge_widt
 
 
 
-<!-- ## Data clean -->
+## Data clean
 
-<!-- #### Data cleaning   -->
+#### Data cleaning
 
 <!-- ## get rid of this and just provide clean data. -->
 <!-- ```{r} -->
+
+<!-- cover<- read.csv("Midewin_Cover_21_24.csv") -->
+
 <!--  cover_clean <- cover %>% mutate(year = as.factor(year),block= as.factor(block), plot= as.factor(plot), cover = as.numeric(cover)) %>% -->
 <!--        filter(!(is.na(code) & (is.na(cover) | cover == 0))) # remove rows where code is missing or blank AND cover is na -->
 
@@ -139,7 +142,10 @@ pos_jitter2 <- position_jitterdodge(jitter.width = 0.2, dodge.width = dodge_widt
 <!--  cover_clean$herbivory_trt<-factor(cover_clean$herbivory_trt, levels=c("XX", "SX", "SB")) -->
 
 <!-- final <- cover_clean %>% -->
-<!--     filter(bison_pasture=="yes", year=="2024")  -->
+<!--     filter(bison_pasture=="yes", year=="2023" | year == "2024") -->
+
+<!-- cover_clean <- final -->
+
 
 <!-- #write_csv(final, "Midewin_cover_clean.csv") -->
 <!-- ``` -->
@@ -151,9 +157,10 @@ pos_jitter2 <- position_jitterdodge(jitter.width = 0.2, dodge.width = dodge_widt
 ## set working directory to source file location
 
 cover_clean<- read.csv("Midewin_cover_clean.csv")
+cover_clean$herbivory_trt<-factor(cover_clean$herbivory_trt, levels=c("XX", "SX", "SB")) #relevel herbivory
 
 
-graze_Aug <-read.csv("Midewin_Aug-Aug_Grazing_Influence_22-24.csv")
+graze_Aug <-read_csv("Midewin_Aug-Aug_Grazing_Influence_22-24.csv")
 
 
 
@@ -187,17 +194,23 @@ specRich1<- cover_clean %>%
 
 #### Add in bison covariate data
 ```{r}
+#plot and year need to be factors in order to merge with spec rich df
+specRich1$plot<-as.factor(specRich1$plot)
+specRich1$year<-as.factor(specRich1$year)
+graze_Aug$plot<-as.factor(graze_Aug$plot)
+graze_Aug$year<-as.factor(graze_Aug$year)
 
 # join bison cov df and specrich df into new single df
 specRich1<- specRich1 %>% left_join(graze_Aug %>% dplyr:: select(plot, year, Weighted_Grazing_Influence), by=c("plot", "year"))
 
-#plot and year need to be factors in order to merge with spec rich df
-specRich1$plot<-as.factor(specRich1$plot)
-specRich1$year<-as.factor(specRich1$year)
+
 
 #fill in missing or zero graze influence values
 #each block/year has one assigned bison influence level, needs to be assigned to all plots within each block
-specRich1 <-specRich1 %>% group_by(block, year) %>% mutate(block_graze_value =first(Weighted_Grazing_Influence[!is.na(Weighted_Grazing_Influence)&Weighted_Grazing_Influence !=0]), Weighted_Grazing_Influence=ifelse(is.na(Weighted_Grazing_Influence)|Weighted_Grazing_Influence==0,block_graze_value, Weighted_Grazing_Influence)) %>% ungroup() %>% dplyr::select(-block_graze_value)
+specRich1 <-specRich1 %>% group_by(block, year) %>% 
+  mutate(block_graze_value =first(Weighted_Grazing_Influence[!is.na(Weighted_Grazing_Influence)&Weighted_Grazing_Influence !=0]), Weighted_Grazing_Influence=ifelse(is.na(Weighted_Grazing_Influence)|Weighted_Grazing_Influence==0,block_graze_value, Weighted_Grazing_Influence)) %>% 
+  ungroup() %>% 
+  dplyr::select(-block_graze_value)
 
 # replace any missing values with zero, these represent plots/years with no recorded bison influence
 specRich1<-specRich1 %>% mutate(Weighted_Grazing_Influence=ifelse(is.na(Weighted_Grazing_Influence), 0, Weighted_Grazing_Influence))
@@ -210,7 +223,9 @@ specRich1<-specRich1 %>% mutate(Weighted_Grazing_Influence=ifelse(is.na(Weighted
 ```{r,results='hide', fig.show='hide'}
 
 #Main results 2024 so remove east and other years
-rich_W24<- specRich1 %>% filter(bison_pasture=="yes", year=="2024") 
+rich_W24<- specRich1 %>% filter(year=="2024") 
+
+
 
 #fitting the model, guassian 
 glmm_richW24<-glmmTMB(richness~herbivory_trt*management_trt+(1|block/plot), data = rich_W24, family = gaussian)
@@ -255,13 +270,13 @@ r2(glmm_richW24) # uses performance package
 #### Post-hoc comparisons
 ```{r}
 #herbivory within each management
-emm_richW24<- emmeans(glmm_richW24, ~herbivory_trt|management_trt) #separates for each level of management trt
+emm_richW24<- emmeans(glmm_richW24, ~herbivory_trt|management_trt, df = 57) #separates for each level of management trt, matching DF to that produced in glmmTMB() summary model to not get Inf.
 pairs_w24<-contrast(emm_richW24, "pairwise", adjust="tukey")
 pairs_w24
 
  
 #management within each herbivory treatment
-emm_richW24m<-emmeans(glmm_richW24, ~management_trt|herbivory_trt) #separates for each level of herbiovry  trt
+emm_richW24m<-emmeans(glmm_richW24, ~management_trt|herbivory_trt, df = 57) #separates for each level of herbiovry  trt
 pairs_w24m<-contrast(emm_richW24m, "pairwise", adjust="tukey")
 pairs_w24m 
 
@@ -272,11 +287,11 @@ pairs_w24m
 #### Data visualization of Species Richness 2024 West Pasture 
 ```{r}
 #use emmeans for estimated marginal means with 95% CI
-#estimates are for each consumer treatment within each mangement treatment 
-emm_rich24 <-emmeans(glmm_richW24,  ~herbivory_trt|management_trt)
-emm_df <-as.data.frame(emm_rich24)
+#estimates are for each consumer treatment within each management treatment 
+ emm_rich24 <-emmeans(glmm_richW24,  ~herbivory_trt|management_trt, df = 57) #  matching DF to that produced in glmmTMB() summary model to not get Inf.
+ emm_df <-as.data.frame(emm_rich24)
 
-#need a data frame with our pairwise cotnrasts to extract significance values  to plot
+#need a data frame with our pairwise contrasts to extract significance values  to plot
 richw24_pairsdf<-as.data.frame(summary(pairs(emm_rich24, by="management_trt", adjust="tukey"))) 
 
 
@@ -305,7 +320,7 @@ pval_df<-pval_df %>% mutate(group1=factor(group1, levels = herbivory_levels), #a
 #need to be stacked
 pval_df <- pval_df %>% group_by(management_trt) %>%  arrange(p.value) %>% #order for contrast significance
   mutate(contrast_index=row_number(), #this helps with stacking brackets 
-        base_y= max (emm_df$upper.CL)+0.7, #this will adjust our height of our brackets, may need to modify this
+        base_y = max (emm_df$upper.CL)+0.7, #this will adjust our height of our brackets, may need to modify this
         y.position= base_y + (contrast_index -1) *0.7) %>% #this staggers our brackets on the y
   ungroup()
 
@@ -340,26 +355,27 @@ ggsave ("Fig3_Richness2024.png",  width= 7.3, height=5, units = "in", dpi = 600)
 
 Table: GLMM Spec Rich 2024
 ```{r}
-#export tables to CSVs to drop into word doc
 
-#model summary , glmm will be added in the SI section 
+#model summary
 glmm_W24sum<-summary(glmm_richW24)
 
 #make into df and round up 
 glmm_W24_df <- as.data.frame(glmm_W24sum$coefficients$cond) %>% tibble::rownames_to_column("Term") %>% 
   mutate(across(c(Estimate, `Std. Error`, `z value`, `Pr(>|z|)`), ~round(.x, 3)))
 
-#exprot to csv
-write.csv(glmm_W24_df, "Table S1 Richness 2024.csv", row.names = FALSE)
+#Model Summary
+glmm_W24_df
+
 ```
 
-Table: Anova Spec Rich 2024
+Table 1: Anova Spec Rich 2024
 ```{r}
-#use anova table for results section 
-#anova_w24
 
 #convert to df, keep column names and round up
 anova_w24_df<-as.data.frame(anova_w24) %>% rownames_to_column("Term") %>% rename(Chisq = Chisq, Df= Df, p_value= `Pr(>Chisq)`)
+
+#Anova summary
+anova_w24_df
 
 #export to CSV 
 write.csv(anova_w24_df, "Table 1 Spec Rich Anova.csv", row.names = FALSE)
@@ -371,18 +387,24 @@ Table: Post Hoc Comparisons Spec Rich 2024
 #pairs_w24 #pairs_w24m
 
 #compares herbivory treatments within each management treatment
-pairs_w24_df<-as.data.frame(pairs_w24) %>% rename(Management_Treatment = management_trt, Contrast = contrast, Estimate = estimate, SE=SE, Df= df, t_ratio = t.ratio, p_value= p.value) %>% 
-  mutate(across(c(Estimate, SE, t_ratio), ~round(.x, 3)), p_value=round(p_value, 4))
+pairs_w24_df<-as.data.frame(pairs_w24) %>% 
+  #rename(Management_Treatment = management_trt, Contrast = contrast, Estimate = estimate, SE=SE, Df= df, t_ratio = t.ratio, p_value= p.value) %>% 
+  mutate(across(c(estimate, SE, t.ratio), ~round(.x, 3)), p.value=round(p.value, 4))
 
-write.csv(pairs_w24_df, "Table_S2_PostHoc_HerbMgmt_Rich24.csv", row.names = FALSE)
+write.csv(pairs_w24_df, "Table_S1_PostHoc_HerbMgmt_Rich24.csv", row.names = FALSE)
 
-#compares management treatments to each other within herbivory treatments -caveat a few trt started out slighty different #s in 2021
+#compares management treatments to each other within herbivory treatments 
 pairs_w24m_df<-as.data.frame(pairs_w24m) %>% rename( Contrast = contrast, Estimate = estimate, SE=SE, Df= df, t_ratio = t.ratio, p_value= p.value) %>% 
   mutate(across(c(Estimate, SE, t_ratio), ~round(.x, 3)), p_value=round(p_value, 4))
+pairs_w24m_df
 
-write.csv(pairs_w24m_df, "Table_S3_PostHoc_BetweenMgmt_Rich24.csv", row.names = FALSE)
 
 ```
+
+
+
+
+
 
 
 
@@ -404,18 +426,6 @@ rich_diff <- rich23_24 %>%
   filter(!is.na(diff_richness)) %>% ungroup #remove any nas
 ```
 
-histogram
-```{r,results='hide', fig.show='hide'}
-ggplot(rich_diff, aes(x= diff_richness)) +
-  geom_histogram()+
-  theme_bw()+
- labs(title = "Distribution of Diff Richness Data", x= "Difference in Richness", y= "Frequency")
-
-# historgram shows sort of symmetric spread, no strong skews and of course negative and positive values
-# poisson and negbin won't work because of negative numbers , same gamma
-#Gaussian is better choice 
-#although richness is a count data, the difference between the two years is not, the change or delta value is more of continuous with pos/neg values therefore gaussian should be the better fit
-```
 
 #### Fit the model 
 ```{r,results='hide', fig.show='hide'}

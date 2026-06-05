@@ -876,3 +876,874 @@ year,block,plot,management_trt,herbivory_trt,bison_pasture,live,unknown,code,cov
 2024,12,34,mow,XX,yes,1,0,CONARV,1,Convolvulus arvensis ,introduced,perennial ,forb
 2024,12,34,mow,XX,yes,1,0,PHLPRA,23,Phleum pratense,introduced,perennial ,grass
 2024,12,34,mow,XX,yes,1,0,DAUCAR,2,Daucus carota,introduced,biennial ,forb
+2023,1,1,fire,XX,yes,0,0,BARE,88,,,,
+2023,1,1,fire,XX,yes,1,0,SOLCAN,11,Solidago canadensis ,native,perennial ,forb
+2023,1,1,fire,XX,yes,1,0,TRIPRA,53,Trifolium pratense,introduced,biennial ,legume
+2023,1,1,fire,XX,yes,1,0,AMBTRI,7,Ambrosia trifida ,native,annual ,forb
+2023,1,1,fire,XX,yes,1,0,AMBART,NA,Ambrosia artemisiifolia,native,annual ,forb
+2023,1,1,fire,XX,yes,1,0,PLALAN,0.5,Plantago lanceolata ,introduced,perennial ,forb
+2023,1,1,fire,XX,yes,1,0,CONARV,3,Convolvulus arvensis ,introduced,perennial ,forb
+2023,1,1,fire,XX,yes,1,1,UK Forb,1,unknown forb,,,forb
+2023,1,1,fire,XX,yes,0,0,LITTER,12,,,,
+2023,1,1,fire,XX,yes,1,0,SOLCAR,1,Solanum carolinense,native,perennial ,forb
+2023,1,1,fire,XX,yes,1,0,PASSAT,3,Pastinaca sativa ,introduced,biennial ,forb
+2023,1,1,fire,XX,yes,1,0,FESARU,5,Festuca arundinacea,introduced,perennial ,grass
+2023,1,1,fire,XX,yes,1,0,ERIANN,2,Erigeron annuus ,native,annual ,forb
+2023,1,1,fire,XX,yes,1,0,SYMLAE,3,Symphyotrichum laeve ,native,perennial ,forb
+2023,1,1,fire,XX,yes,1,0,Scirpus spp ,1,Scirpus spp ,native,perennial ,grass
+2023,1,1,fire,XX,yes,1,0,DAUCAR,2,Daucus carota,introduced,biennial ,forb
+2023,1,1,fire,XX,yes,1,0,BROINE,13,Bromus inermis ,introduced,perennial ,grass
+2023,1,1,fire,XX,yes,1,0,POAPRA,15,Poa pratensis ,introduced,perennial ,grass
+2023,1,1,fire,XX,yes,1,0,MEDLUP,2,Medicago lupulina ,introduced,perennial ,legume
+2023,1,1,fire,XX,yes,1,0,OXASTR,0.5,Oxalis stricta ,native,perennial ,forb
+2023,1,1,fire,XX,yes,1,0,DACGLO,3,Dactylis glomerata,introduced,perennial ,grass
+2023,1,2,fire,SX,yes,0,0,BARE,98,,,,
+2023,1,2,fire,SX,yes,1,0,SOLCAN,14,Solidago canadensis ,native,perennial ,forb
+2023,1,2,fire,SX,yes,1,0,AMBTRI,9,Ambrosia trifida ,native,annual ,forb
+2023,1,2,fire,SX,yes,1,0,AMBART,1,Ambrosia artemisiifolia,native,annual ,forb
+2023,1,2,fire,SX,yes,1,0,DACGLO,11,Dactylis glomerata,introduced,perennial ,grass
+2023,1,2,fire,SX,yes,1,0,Scirpus spp ,0.5,Scirpus spp ,native,perennial ,grass
+2023,1,2,fire,SX,yes,1,0,DAUCAR,4,Daucus carota,introduced,biennial ,forb
+2023,1,2,fire,SX,yes,1,0,CONARV,3,Convolvulus arvensis ,introduced,perennial ,forb
+2023,1,2,fire,SX,yes,1,0,ELAUMB,30,Elaeagnus umbellata,,,woody
+2023,1,2,fire,SX,yes,1,0,FESARU,8,Festuca arundinacea,introduced,perennial ,grass
+2023,1,2,fire,SX,yes,1,1,UK Forb ,0.1,unknown forb,,,forb
+2023,1,2,fire,SX,yes,1,0,BROINE,40,Bromus inermis ,introduced,perennial ,grass
+2023,1,2,fire,SX,yes,1,0,PASSAT,4,Pastinaca sativa ,introduced,biennial ,forb
+2023,1,2,fire,SX,yes,1,0,TRIPRA,3,Trifolium pratense,introduced,biennial ,legume
+2023,1,2,fire,SX,yes,1,0,POAPRA,27,Poa pratensis ,introduced,perennial ,grass
+2023,1,2,fire,SX,yes,1,0,TRIPRA,2,Trifolium pratense,introduced,biennial ,legume
+2023,1,2,fire,SX,yes,1,0,SYMLAE,0.5,Symphyotrichum laeve ,native,perennial ,forb
+2023,1,3,fire,SB,yes,0,0,BARE,85,,,,
+2023,1,3,fire,SB,yes,0,0,LITTER,15,,,,
+2023,1,3,fire,SB,yes,1,0,TRIREP,3,Trifolium repens ,introduced,perennial ,legume
+2023,1,3,fire,SB,yes,1,0,TRIPRA,2,Trifolium pratense,introduced,biennial ,legume
+2023,1,3,fire,SB,yes,1,0,BROINE,10,Bromus inermis ,introduced,perennial ,grass
+2023,1,3,fire,SB,yes,1,0,FESARU,18,Festuca arundinacea,introduced,perennial ,grass
+2023,1,3,fire,SB,yes,1,0,SOLCAN,23,Solidago canadensis ,native,perennial ,forb
+2023,1,3,fire,SB,yes,1,0,SOLCAR,1,Solanum carolinense,native,perennial ,forb
+2023,1,3,fire,SB,yes,1,0,AMBTRI,2,Ambrosia trifida ,native,annual ,forb
+2023,1,3,fire,SB,yes,1,1,UK Forb,0.1,unknown forb,,,forb
+2023,1,3,fire,SB,yes,1,0,DACGLO,0.5,Dactylis glomerata,introduced,perennial ,grass
+2023,1,3,fire,SB,yes,1,0,DAUCAR,2,Daucus carota,introduced,biennial ,forb
+2023,1,3,fire,SB,yes,1,0,POAPRA,48,Poa pratensis ,introduced,perennial ,grass
+2023,1,3,fire,SB,yes,1,0,AMBART,1,Ambrosia artemisiifolia,native,annual ,forb
+2023,1,3,fire,SB,yes,1,0,TAROFF,0.5,Taraxacum officnale ,introduced,perennial ,forb
+2023,1,3,fire,SB,yes,1,0,SYMLAE,0.5,Symphyotrichum laeve ,native,perennial ,forb
+2023,2,4,fire,XX,yes,0,0,BARE,98,,,,
+2023,2,4,fire,XX,yes,0,0,LITTER,2,,,,
+2023,2,4,fire,XX,yes,1,0,POAPRA,10,Poa pratensis ,introduced,perennial ,grass
+2023,2,4,fire,XX,yes,1,0,DAUCAR,0.2,Daucus carota,introduced,biennial ,forb
+2023,2,4,fire,XX,yes,1,0,AMBTRI,16,Ambrosia trifida ,native,annual ,forb
+2023,2,4,fire,XX,yes,1,0,PASSAT,2,Pastinaca sativa ,introduced,biennial ,forb
+2023,2,4,fire,XX,yes,1,0,SOLCAN,92,Solidago canadensis ,native,perennial ,forb
+2023,2,4,fire,XX,yes,1,0,TRIREP,2,Trifolium repens ,introduced,perennial ,legume
+2023,2,4,fire,XX,yes,1,0,APOCAN,3,Apocynum cannabinum ,native,perennial ,forb
+2023,2,4,fire,XX,yes,1,0,PHLPRA,8,Phleum pratense,introduced,perennial ,grass
+2023,2,4,fire,XX,yes,1,0,AMBART,0.1,Ambrosia artemisiifolia,native,annual ,forb
+2023,2,4,fire,XX,yes,1,0,CONARV,4,Convolvulus arvensis ,introduced,perennial ,forb
+2023,2,4,fire,XX,yes,1,0,BROINE,15,Bromus inermis ,introduced,perennial ,grass
+2023,2,4,fire,XX,yes,1,0,FESARU,25,Festuca arundinacea,introduced,perennial ,grass
+2023,2,4,fire,XX,yes,1,0,DACGLO,12,Dactylis glomerata,introduced,perennial ,grass
+2023,2,6,fire,SB,yes,1,0,SOLCAN,65,Solidago canadensis ,native,perennial ,forb
+2023,2,6,fire,SB,yes,1,0,BROINE,38,Bromus inermis ,introduced,perennial ,grass
+2023,2,6,fire,SB,yes,1,0,FESARU,42,Festuca arundinacea,introduced,perennial ,grass
+2023,2,6,fire,SB,yes,1,0,CONARV,1,Convolvulus arvensis ,introduced,perennial ,forb
+2023,2,6,fire,SB,yes,1,0,TOXRAD,6,Toxicodendron radicans,native,perennial ,vine
+2023,2,6,fire,SB,yes,1,0,PASSAT,6,Pastinaca sativa ,introduced,biennial ,forb
+2023,2,6,fire,SB,yes,1,0,POAPRA,25,Poa pratensis ,introduced,perennial ,grass
+2023,2,6,fire,SB,yes,1,0,TRIPRA,4,Trifolium pratense,introduced,biennial ,legume
+2023,2,6,fire,SB,yes,1,0,APOCAN,3,Apocynum cannabinum ,native,perennial ,forb
+2023,2,6,fire,SB,yes,0,0,BARE,98,,,,
+2023,2,6,fire,SB,yes,0,0,LITTER,2,,,,
+2023,2,6,fire,SB,yes,1,0,AMBTRI,2,Ambrosia trifida ,native,annual ,forb
+2023,2,6,fire,SB,yes,1,0,TRIREP,2,Trifolium repens ,introduced,perennial ,legume
+2023,3,7,fire,XX,yes,1,0,SOLCAN,60,Solidago canadensis ,native,perennial ,forb
+2023,3,7,fire,XX,yes,1,0,CONARV,6,Convolvulus arvensis ,introduced,perennial ,forb
+2023,3,7,fire,XX,yes,1,0,AMBTRI,3,Ambrosia trifida ,native,annual ,forb
+2023,3,7,fire,XX,yes,1,0,FESARU,25,Festuca arundinacea,introduced,perennial ,grass
+2023,3,7,fire,XX,yes,1,0,BROINE,20,Bromus inermis ,introduced,perennial ,grass
+2023,3,7,fire,XX,yes,1,0,TRIPRA,6,Trifolium pratense,introduced,biennial ,legume
+2023,3,7,fire,XX,yes,1,0,PHLPRA,8,Phleum pratense,introduced,perennial ,grass
+2023,3,7,fire,XX,yes,1,0,ERISTR,13,Erigeron strigosus ,native,biennial ,forb
+2023,3,7,fire,XX,yes,1,0,TRIREP,2,Trifolium repens ,introduced,perennial ,legume
+2023,3,7,fire,XX,yes,1,0,SOLCAR,1,Solanum carolinense,native,perennial ,forb
+2023,3,7,fire,XX,yes,0,0,BARE,NA,,,,
+2023,3,7,fire,XX,yes,0,0,LITTER,NA,,,,
+2023,3,7,fire,XX,yes,1,0,PASSAT,5,Pastinaca sativa ,introduced,biennial ,forb
+2023,3,7,fire,XX,yes,1,0,DAUCAR,1,Daucus carota,introduced,biennial ,forb
+2023,3,7,fire,XX,yes,1,0,POAPRA,45,Poa pratensis ,introduced,perennial ,grass
+2023,3,8,fire,SX,yes,0,0,BARE,85,,,,
+2023,3,8,fire,SX,yes,0,0,LITTER,15,,,,
+2023,3,8,fire,SX,yes,1,0,POAPRA,20,Poa pratensis ,introduced,perennial ,grass
+2023,3,8,fire,SX,yes,1,0,TRIREP,6,Trifolium repens ,introduced,perennial ,legume
+2023,3,8,fire,SX,yes,1,0,TRIPRA,1,Trifolium pratense,introduced,biennial ,legume
+2023,3,8,fire,SX,yes,1,0,PASSAT,20,Pastinaca sativa ,introduced,biennial ,forb
+2023,3,8,fire,SX,yes,1,0,ASCSYR,22,Asclepias syriaca,native,perennial ,forb
+2023,3,8,fire,SX,yes,1,0,BROINE,10,Bromus inermis ,introduced,perennial ,grass
+2023,3,8,fire,SX,yes,1,0,ERISTR,18,Erigeron strigosus ,native,biennial ,forb
+2023,3,8,fire,SX,yes,1,0,PHLPRA,8,Phleum pratense,introduced,perennial ,grass
+2023,3,8,fire,SX,yes,1,0,FESARU,12,Festuca arundinacea,introduced,perennial ,grass
+2023,3,8,fire,SX,yes,1,0,SOLCAN,28,Solidago canadensis ,native,perennial ,forb
+2023,3,8,fire,SX,yes,1,0,CONARV,4,Convolvulus arvensis ,introduced,perennial ,forb
+2023,3,8,fire,SX,yes,1,0,DAUCAR,1,Daucus carota,introduced,biennial ,forb
+2023,3,8,fire,SX,yes,1,0,AMBTRI,2,Ambrosia trifida ,native,annual ,forb
+2023,3,9,fire,SB,yes,0,0,BARE,98,,,,
+2023,3,9,fire,SB,yes,0,0,LITTER,2,,,,
+2023,3,9,fire,SB,yes,1,0,BROINE,30,Bromus inermis ,introduced,perennial ,grass
+2023,3,9,fire,SB,yes,1,0,POAPRA,15,Poa pratensis ,introduced,perennial ,grass
+2023,3,9,fire,SB,yes,1,0,PASSAT,5,Pastinaca sativa ,introduced,biennial ,forb
+2023,3,9,fire,SB,yes,1,0,AMBTRI,3,Ambrosia trifida ,native,annual ,forb
+2023,3,9,fire,SB,yes,1,0,FESARU,8,Festuca arundinacea,introduced,perennial ,grass
+2023,3,9,fire,SB,yes,1,0,MONFIS,18,Mondarda fistulosa ,native,perennial ,legume
+2023,3,9,fire,SB,yes,1,0,SOLCAN,45,Solidago canadensis ,native,perennial ,forb
+2023,3,9,fire,SB,yes,1,0,TRIPRA,13,Trifolium pratense,introduced,biennial ,legume
+2023,3,9,fire,SB,yes,1,0,AMBART,3,Ambrosia artemisiifolia,native,annual ,forb
+2023,3,9,fire,SB,yes,1,0,CONARV,2,Convolvulus arvensis ,introduced,perennial ,forb
+2023,3,9,fire,SB,yes,1,0,TRIREP,2,Trifolium repens ,introduced,perennial ,legume
+2023,4,10,fire,XX,yes,0,0,BARE,95,,,,
+2023,4,10,fire,XX,yes,0,0,LITTER,5,,,,
+2023,4,10,fire,XX,yes,1,0,MEDLUP,1,Medicago lupulina ,introduced,perennial ,legume
+2023,4,10,fire,XX,yes,1,0,SOLCAR,1,Solanum carolinense,native,perennial ,forb
+2023,4,10,fire,XX,yes,1,0,ELAUMB,15,Elaeagnus umbellata,introduced,,woody
+2023,4,10,fire,XX,yes,1,0,SOLCAN,80,Solidago canadensis ,native,perennial ,forb
+2023,4,10,fire,XX,yes,1,0,POAPRA,38,Poa pratensis ,introduced,perennial ,grass
+2023,4,10,fire,XX,yes,1,0,CONARV,4,Convolvulus arvensis ,introduced,perennial ,forb
+2023,4,10,fire,XX,yes,1,0,AMBART,2,Ambrosia artemisiifolia,native,annual ,forb
+2023,4,10,fire,XX,yes,1,0,PASSAT,1,Pastinaca sativa ,introduced,biennial ,forb
+2023,4,11,fire,SX,yes,0,0,BARE,88,,,,
+2023,4,11,fire,SX,yes,0,0,LITTER,12,,,,
+2023,4,11,fire,SX,yes,1,0,TRIPRA,20,Trifolium pratense,introduced,biennial ,legume
+2023,4,11,fire,SX,yes,1,0,PASSAT,1,Pastinaca sativa ,introduced,biennial ,forb
+2023,4,11,fire,SX,yes,1,0,SOLCAN,70,Solidago canadensis ,native,perennial ,forb
+2023,4,11,fire,SX,yes,1,0,DAUCAR,1,Daucus carota,introduced,biennial ,forb
+2023,4,11,fire,SX,yes,1,0,CONARV,2,Convolvulus arvensis ,introduced,perennial ,forb
+2023,4,11,fire,SX,yes,1,0,AMBART,2,Ambrosia artemisiifolia,native,annual ,forb
+2023,4,11,fire,SX,yes,1,0,MONFIS,10,Mondarda fistulosa ,native,perennial ,legume
+2023,4,11,fire,SX,yes,1,0,POAPRA,45,Poa pratensis ,introduced,perennial ,grass
+2023,4,11,fire,SX,yes,1,0,FESARU,38,Festuca arundinacea,introduced,perennial ,grass
+2023,4,12,fire,SB,yes,1,0,SOLCAN,12,Solidago canadensis ,native,perennial ,forb
+2023,4,12,fire,SB,yes,1,0,MONFIS,16,Mondarda fistulosa ,native,perennial ,legume
+2023,4,12,fire,SB,yes,1,0,MEDLUP,4,Medicago lupulina ,introduced,perennial ,legume
+2023,4,12,fire,SB,yes,1,0,SYMLAE,2,Symphyotrichum laeve ,native,perennial ,forb
+2023,4,12,fire,SB,yes,1,0,ELAUMB,18,Elaeagnus umbellata,introduced,,woody
+2023,4,12,fire,SB,yes,0,0,BARE,NA,,,,
+2023,4,12,fire,SB,yes,0,0,LITTER,NA,,,,
+2023,4,12,fire,SB,yes,1,0,PASSAT,3,Pastinaca sativa ,introduced,biennial ,forb
+2023,4,12,fire,SB,yes,1,0,POAPRA,50,Poa pratensis ,introduced,perennial ,grass
+2023,4,12,fire,SB,yes,1,0,TOXRAD,2,Toxicodendron radicans,native,perennial ,vine
+2023,4,12,fire,SB,yes,1,0,CONARV,2,Convolvulus arvensis ,introduced,perennial ,forb
+2023,4,12,fire,SB,yes,1,0,TRIREP,3,Trifolium repens ,introduced,perennial ,legume
+2023,4,12,fire,SB,yes,1,0,AMBART,3,Ambrosia artemisiifolia,native,annual ,forb
+2023,4,12,fire,SB,yes,1,0,AMBTRI,3,Ambrosia trifida ,native,annual ,forb
+2023,5,13,fire,XX,yes,0,0,BARE,98,,,,
+2023,5,13,fire,XX,yes,0,0,LITTER,2,,,,
+2023,5,13,fire,XX,yes,1,0,SOLCAN,62,Solidago canadensis ,native,perennial ,forb
+2023,5,13,fire,XX,yes,1,0,CONARV,4,Convolvulus arvensis ,introduced,perennial ,forb
+2023,5,13,fire,XX,yes,1,0,POAPRA,35,Poa pratensis ,introduced,perennial ,grass
+2023,5,13,fire,XX,yes,1,0,PASSAT,12,Pastinaca sativa ,introduced,biennial ,forb
+2023,5,13,fire,XX,yes,1,0,AMBTRI,13,Ambrosia trifida ,native,annual ,forb
+2023,5,13,fire,XX,yes,1,0,BROINE,15,Bromus inermis ,introduced,perennial ,grass
+2023,5,13,fire,XX,yes,1,0,SYMLAE,2,Symphyotrichum laeve ,native,perennial ,forb
+2023,5,13,fire,XX,yes,1,0,PHLPRA,8,Phleum pratense,introduced,perennial ,grass
+2023,5,13,fire,XX,yes,1,0,FESARU,38,Festuca arundinacea,introduced,perennial ,grass
+2023,5,13,fire,XX,yes,1,0,TRIREP,2,Trifolium repens ,introduced,perennial ,legume
+2023,5,14,fire,SX,yes,0,0,BARE,99,,,,
+2023,5,14,fire,SX,yes,0,0,LITTER,1,,,,
+2023,5,14,fire,SX,yes,1,0,SOLCAR,1,Solanum carolinense,native,perennial ,forb
+2023,5,14,fire,SX,yes,1,1,UK Forb,1,unknown forb,,,forb
+2023,5,14,fire,SX,yes,1,0,AMBTRI,4,Ambrosia trifida ,native,annual ,forb
+2023,5,14,fire,SX,yes,1,0,SOLCAN,40,Solidago canadensis ,native,perennial ,forb
+2023,5,14,fire,SX,yes,1,0,BROINE,25,Bromus inermis ,introduced,perennial ,grass
+2023,5,14,fire,SX,yes,1,0,TRIREP,1,Trifolium repens ,introduced,perennial ,legume
+2023,5,14,fire,SX,yes,1,0,POAPRA,40,Poa pratensis ,introduced,perennial ,grass
+2023,5,14,fire,SX,yes,1,0,MEDLUP,2,Medicago lupulina ,introduced,perennial ,legume
+2023,5,14,fire,SX,yes,1,0,AMBART,1,Ambrosia artemisiifolia,native,annual ,forb
+2023,5,15,fire,SB,yes,0,0,BARE,99,,,,
+2023,5,15,fire,SB,yes,0,0,LITTER,1,,,,
+2023,5,15,fire,SB,yes,1,0,AMBTRI,2,Ambrosia trifida ,native,annual ,forb
+2023,5,15,fire,SB,yes,1,0,PASSAT,2,Pastinaca sativa ,introduced,biennial ,forb
+2023,5,15,fire,SB,yes,1,0,MONFIS,2,Mondarda fistulosa ,native,perennial ,legume
+2023,5,15,fire,SB,yes,1,0,SOLCAN,46,Solidago canadensis ,native,perennial ,forb
+2023,5,15,fire,SB,yes,1,0,TRIPRA,23,Trifolium pratense,introduced,biennial ,legume
+2023,5,15,fire,SB,yes,1,0,TRIREP,5,Trifolium repens ,introduced,perennial ,legume
+2023,5,15,fire,SB,yes,1,0,AMBART,1,Ambrosia artemisiifolia,native,annual ,forb
+2023,5,15,fire,SB,yes,1,0,SORNUT,15,Sorghastrum nutans,native,perennial ,grass
+2023,5,15,fire,SB,yes,1,0,POAPRA,30,Poa pratensis ,introduced,perennial ,grass
+2023,5,15,fire,SB,yes,1,0,FESARU,12,Festuca arundinacea,introduced,perennial ,grass
+2023,5,15,fire,SB,yes,1,0,DAUCAR,1,Daucus carota,introduced,biennial ,forb
+2023,6,16,fire,XX,yes,1,0,TOXRAD,36,Toxicodendron radicans,native,perennial ,vine
+2023,6,16,fire,XX,yes,1,0,SOLCAN,27,Solidago canadensis ,native,perennial ,forb
+2023,6,16,fire,XX,yes,1,0,TRIPRA,5,Trifolium pratense,introduced,biennial ,legume
+2023,6,16,fire,XX,yes,1,0,AMBTRI,11,Ambrosia trifida ,native,annual ,forb
+2023,6,16,fire,XX,yes,1,0,AMBART,1,Ambrosia artemisiifolia,native,annual ,forb
+2023,6,16,fire,XX,yes,1,0,DALPUR,0.1,Dalea pupurea,native,perennial ,forb
+2023,6,16,fire,XX,yes,1,0,TRIREP,2,Trifolium repens ,introduced,perennial ,legume
+2023,6,16,fire,XX,yes,0,0,BARE,45,,,,
+2023,6,16,fire,XX,yes,0,0,LITTER,55,,,,
+2023,6,16,fire,XX,yes,1,0,PHLPRA,4,Phleum pratense,introduced,perennial ,grass
+2023,6,16,fire,XX,yes,1,0,POAPRA,73,Poa pratensis ,introduced,perennial ,grass
+2023,6,16,fire,XX,yes,1,0,AGRGIG,3,Agrostis gigantea,introduced,perennial ,grass
+2023,6,16,fire,XX,yes,1,0,PASSAT,7,Pastinaca sativa ,introduced,biennial ,forb
+2023,6,16,fire,XX,yes,1,0,FESARU,7,Festuca arundinacea,introduced,perennial ,grass
+2023,6,16,fire,XX,yes,1,0,DACGLO,1,Dactylis glomerata,introduced,perennial ,grass
+2023,6,16,fire,XX,yes,1,0,DAUCAR,3,Daucus carota,introduced,biennial ,forb
+2023,6,16,fire,XX,yes,1,0,CONARV,2,Convolvulus arvensis ,introduced,perennial ,forb
+2023,6,16,fire,XX,yes,1,0,ELYREP,2,Elymus repens,introduced,,
+2023,6,17,fire,SX,yes,1,0,PHLPRA,0.5,Phleum pratense,introduced,perennial ,grass
+2023,6,17,fire,SX,yes,1,0,SOLCAN,8,Solidago canadensis ,native,perennial ,forb
+2023,6,17,fire,SX,yes,1,0,SYMLAE,2,Symphyotrichum laeve ,native,perennial ,forb
+2023,6,17,fire,SX,yes,1,0,POAPRA,70,Poa pratensis ,introduced,perennial ,grass
+2023,6,17,fire,SX,yes,1,0,PASSAT,85,Pastinaca sativa ,introduced,biennial ,forb
+2023,6,17,fire,SX,yes,1,0,AMBTRI,2,Ambrosia trifida ,native,annual ,forb
+2023,6,17,fire,SX,yes,1,0,DAUCAR,2,Daucus carota,introduced,biennial ,forb
+2023,6,17,fire,SX,yes,1,0,TRIPRA,4,Trifolium pratense,introduced,biennial ,legume
+2023,6,17,fire,SX,yes,0,0,LITTER,50,,,,
+2023,6,17,fire,SX,yes,0,0,BARE,50,,,,
+2023,6,17,fire,SX,yes,1,0,FESARU,0.5,Festuca arundinacea,introduced,perennial ,grass
+2023,6,17,fire,SX,yes,1,0,AGRGIG,1,Agrostis gigantea,introduced,perennial ,grass
+2023,6,17,fire,SX,yes,1,0,DACGLO,6,Dactylis glomerata,introduced,perennial ,grass
+2023,6,18,fire,SB,yes,1,0,SOLCAN,76,Solidago canadensis ,native,perennial ,forb
+2023,6,18,fire,SB,yes,1,0,PASSAT,5,Pastinaca sativa ,introduced,biennial ,forb
+2023,6,18,fire,SB,yes,1,0,TRIREP,1,Trifolium repens ,introduced,perennial ,legume
+2023,6,18,fire,SB,yes,0,0,BARE,95,,,,
+2023,6,18,fire,SB,yes,0,0,LITTER,5,,,,
+2023,6,18,fire,SB,yes,1,0,DAUCAR,0.1,Daucus carota,introduced,biennial ,forb
+2023,6,18,fire,SB,yes,1,0,SYMLAE,2,Symphyotrichum laeve ,native,perennial ,forb
+2023,6,18,fire,SB,yes,1,0,AMBTRI,1,Ambrosia trifida ,native,annual ,forb
+2023,6,18,fire,SB,yes,1,0,POAPRA,30,Poa pratensis ,introduced,perennial ,grass
+2023,6,18,fire,SB,yes,1,0,PHLPRA,4,Phleum pratense,introduced,perennial ,grass
+2023,6,18,fire,SB,yes,1,0,DACGLO,2,Dactylis glomerata,introduced,perennial ,grass
+2023,6,18,fire,SB,yes,1,0,ELYREP,1,Elymus repens,introduced,,
+2023,6,18,fire,SB,yes,1,0,CONARV,0.5,Convolvulus arvensis ,introduced,perennial ,forb
+2023,6,18,fire,SB,yes,1,0,VERURT,1,Verbena urticifolia ,native,perennial ,forb
+2023,7,19,mow,XX,yes,1,0,AMBTRI,11,Ambrosia trifida ,native,annual ,forb
+2023,7,19,mow,XX,yes,1,0,TRIPRA,91,Trifolium pratense,introduced,biennial ,legume
+2023,7,19,mow,XX,yes,1,0,DACGLO,7,Dactylis glomerata,introduced,perennial ,grass
+2023,7,19,mow,XX,yes,0,0,LITTER,91,,,,
+2023,7,19,mow,XX,yes,1,0,CICINT,17,Cichorium intybus,introduced,biennial ,forb
+2023,7,19,mow,XX,yes,1,0,PHLPRA,2,Phleum pratense,introduced,perennial ,grass
+2023,7,19,mow,XX,yes,1,0,POAPRA,7,Poa pratensis ,introduced,perennial ,grass
+2023,7,19,mow,XX,yes,1,0,PASSAT,1,Pastinaca sativa ,introduced,biennial ,forb
+2023,7,19,mow,XX,yes,1,0,FESARU,21,Festuca arundinacea,introduced,perennial ,grass
+2023,7,19,mow,XX,yes,1,0,ERISTR,1,Erigeron strigosus ,native,biennial ,forb
+2023,7,19,mow,XX,yes,0,0,BARE,9,,,,
+2023,7,19,mow,XX,yes,1,0,PLAMAJ,2,Plantago major,introduced,perennial ,forb
+2023,7,20,mow,SX,yes,1,0,EUPALT,0.9,Eupatorium altissimum ,native,perennial ,forb
+2023,7,20,mow,SX,yes,1,0,AMBTRI,28,Ambrosia trifida ,native,annual ,forb
+2023,7,20,mow,SX,yes,1,0,PASSAT,6,Pastinaca sativa ,introduced,biennial ,forb
+2023,7,20,mow,SX,yes,1,0,AMBART,0.2,Ambrosia artemisiifolia,native,annual ,forb
+2023,7,20,mow,SX,yes,1,0,Carex Spp ,4,Carex spp ,native,perennial ,grass
+2023,7,20,mow,SX,yes,1,0,TRIPRA,10,Trifolium pratense,introduced,biennial ,legume
+2023,7,20,mow,SX,yes,1,0,FESARU,16,Festuca arundinacea,introduced,perennial ,grass
+2023,7,20,mow,SX,yes,1,0,MONFIS,2,Mondarda fistulosa ,native,perennial ,legume
+2023,7,20,mow,SX,yes,1,0,SOLCAR,1,Solanum carolinense,native,perennial ,forb
+2023,7,20,mow,SX,yes,0,0,LITTER,94,,,,
+2023,7,20,mow,SX,yes,1,0,CONARV,3,Convolvulus arvensis ,introduced,perennial ,forb
+2023,7,20,mow,SX,yes,1,0,POAPRA,12,Poa pratensis ,introduced,perennial ,grass
+2023,7,20,mow,SX,yes,1,0,DACGLO,1,Dactylis glomerata,introduced,perennial ,grass
+2023,7,20,mow,SX,yes,1,0,BROINE,60,Bromus inermis ,introduced,perennial ,grass
+2023,7,20,mow,SX,yes,0,0,BARE,6,,,,
+2023,7,21,mow,SB,yes,1,0,MELOFF,1,Melilotus officinalis ,introduced,perennial ,legume
+2023,7,21,mow,SB,yes,1,0,SOLCAN,7,Solidago canadensis ,native,perennial ,forb
+2023,7,21,mow,SB,yes,1,0,TRIREP,15,Trifolium repens ,introduced,perennial ,legume
+2023,7,21,mow,SB,yes,1,0,CONARV,3,Convolvulus arvensis ,introduced,perennial ,forb
+2023,7,21,mow,SB,yes,0,0,BARE,10,,,,
+2023,7,21,mow,SB,yes,1,0,BROINE,32,Bromus inermis ,introduced,perennial ,grass
+2023,7,21,mow,SB,yes,1,0,POAPRA,24,Poa pratensis ,introduced,perennial ,grass
+2023,7,21,mow,SB,yes,1,0,FESARU,10,Festuca arundinacea,introduced,perennial ,grass
+2023,7,21,mow,SB,yes,1,0,SOLCAR,1,Solanum carolinense,native,perennial ,forb
+2023,7,21,mow,SB,yes,0,0,LITTER,90,,,,
+2023,7,21,mow,SB,yes,1,0,DAUCAR,0.5,Daucus carota,introduced,biennial ,forb
+2023,7,21,mow,SB,yes,1,0,AMBTRI,1,Ambrosia trifida ,native,annual ,forb
+2023,7,21,mow,SB,yes,1,0,PHLPRA,2,Phleum pratense,introduced,perennial ,grass
+2023,7,21,mow,SB,yes,1,0,PASSAT,0.1,Pastinaca sativa ,introduced,biennial ,forb
+2023,8,22,mow,XX,yes,0,0,BARE,1,,,,
+2023,8,22,mow,XX,yes,1,0,SOLCAN,80,Solidago canadensis ,native,perennial ,forb
+2023,8,22,mow,XX,yes,1,1,UK Forb,6,unknown forb,,,forb
+2023,8,22,mow,XX,yes,0,0,LITTER,99,,,,
+2023,8,22,mow,XX,yes,1,0,POAPRA,40,Poa pratensis ,introduced,perennial ,grass
+2023,8,22,mow,XX,yes,1,0,TRIPRA,27,Trifolium pratense,introduced,biennial ,legume
+2023,8,22,mow,XX,yes,1,0,PASSAT,1,Pastinaca sativa ,introduced,biennial ,forb
+2023,8,23,mow,SX,yes,0,0,BARE,5,,,,
+2023,8,23,mow,SX,yes,0,0,LITTER,95,,,,
+2023,8,23,mow,SX,yes,1,1,UK Woody,10,unknown woody ,,,woody
+2023,8,23,mow,SX,yes,1,1,UK Forb,3,unknown forb,,,forb
+2023,8,23,mow,SX,yes,1,0,TRIPRA,18,Trifolium pratense,introduced,biennial ,legume
+2023,8,23,mow,SX,yes,1,0,MONFIS,14,Mondarda fistulosa ,native,perennial ,legume
+2023,8,23,mow,SX,yes,1,0,SOLCAN,27,Solidago canadensis ,native,perennial ,forb
+2023,8,23,mow,SX,yes,1,0,PASSAT,10,Pastinaca sativa ,introduced,biennial ,forb
+2023,8,23,mow,SX,yes,1,0,POAPRA,40,Poa pratensis ,introduced,perennial ,grass
+2023,8,23,mow,SX,yes,1,0,DAUCAR,3,Daucus carota,introduced,biennial ,forb
+2023,8,23,mow,SX,yes,1,0,SYMLAE,2,Symphyotrichum laeve ,native,perennial ,forb
+2023,8,23,mow,SX,yes,1,0,FESARU,2,Festuca arundinacea,introduced,perennial ,grass
+2023,8,24,mow,SB,yes,0,0,BARE,2,,,,
+2023,8,24,mow,SB,yes,0,0,LITTER,98,,,,
+2023,8,24,mow,SB,yes,1,0,POAPRA,20,Poa pratensis ,introduced,perennial ,grass
+2023,8,24,mow,SB,yes,1,0,MONFIS,3,Mondarda fistulosa ,native,perennial ,legume
+2023,8,24,mow,SB,yes,1,0,SYMLAE,7,Symphyotrichum laeve ,native,perennial ,forb
+2023,8,24,mow,SB,yes,1,1,UK Forb,0.1,unknown forb,,,forb
+2023,8,24,mow,SB,yes,1,0,SOLCAN,16,Solidago canadensis ,native,perennial ,forb
+2023,8,24,mow,SB,yes,1,0,AMBTRI,2,Ambrosia trifida ,native,annual ,forb
+2023,8,24,mow,SB,yes,1,0,PASSAT,0.1,Pastinaca sativa ,introduced,biennial ,forb
+2023,8,24,mow,SB,yes,1,0,BROINE,30,Bromus inermis ,introduced,perennial ,grass
+2023,8,24,mow,SB,yes,1,0,FESARU,40,Festuca arundinacea,introduced,perennial ,grass
+2023,8,24,mow,SB,yes,1,0,TRIPRA,0.5,Trifolium pratense,introduced,biennial ,legume
+2023,9,25,mow,XX,yes,0,0,BARE,6,,,,
+2023,9,25,mow,XX,yes,0,0,LITTER,94,,,,
+2023,9,25,mow,XX,yes,1,0,SOLCAN,65,Solidago canadensis ,native,perennial ,forb
+2023,9,25,mow,XX,yes,1,0,TRIPRA,8,Trifolium pratense,introduced,biennial ,legume
+2023,9,25,mow,XX,yes,1,0,AMBTRI,1,Ambrosia trifida ,native,annual ,forb
+2023,9,25,mow,XX,yes,1,0,MONFIS,3,Mondarda fistulosa ,native,perennial ,legume
+2023,9,25,mow,XX,yes,1,0,DAUCAR,6,Daucus carota,introduced,biennial ,forb
+2023,9,25,mow,XX,yes,1,0,CONARV,1,Convolvulus arvensis ,introduced,perennial ,forb
+2023,9,25,mow,XX,yes,1,0,FESARU,3,Festuca arundinacea,introduced,perennial ,grass
+2023,9,25,mow,XX,yes,1,0,LOTCOR,17,Lotus corniculatus ,introduced,perennial ,legume
+2023,9,25,mow,XX,yes,1,0,POAPRA,42,Poa pratensis ,introduced,perennial ,grass
+2023,9,25,mow,XX,yes,1,0,BROINE,15,Bromus inermis ,introduced,perennial ,grass
+2023,9,25,mow,XX,yes,1,0,AMBART,1,Ambrosia artemisiifolia,native,annual ,forb
+2023,9,26,mow,SX,yes,0,0,BARE,3,,,,
+2023,9,26,mow,SX,yes,0,0,LITTER,97,,,,
+2023,9,26,mow,SX,yes,1,0,BROINE,25,Bromus inermis ,introduced,perennial ,grass
+2023,9,26,mow,SX,yes,1,0,SYMLAE,1,Symphyotrichum laeve ,native,perennial ,forb
+2023,9,26,mow,SX,yes,1,0,CONARV,2,Convolvulus arvensis ,introduced,perennial ,forb
+2023,9,26,mow,SX,yes,1,0,LOTCOR,35,Lotus corniculatus ,introduced,perennial ,legume
+2023,9,26,mow,SX,yes,1,0,SOLCAN,53,Solidago canadensis ,native,perennial ,forb
+2023,9,26,mow,SX,yes,1,0,POAPRA,70,Poa pratensis ,introduced,perennial ,grass
+2023,9,26,mow,SX,yes,1,0,FESARU,15,Festuca arundinacea,introduced,perennial ,grass
+2023,9,26,mow,SX,yes,1,0,AMBTRI,1,Ambrosia trifida ,native,annual ,forb
+2023,9,26,mow,SX,yes,1,0,MONFIS,28,Mondarda fistulosa ,native,perennial ,legume
+2023,9,26,mow,SX,yes,1,0,TRIPRA,2,Trifolium pratense,introduced,biennial ,legume
+2023,9,26,mow,SX,yes,1,0,TOXRAD,1,Toxicodendron radicans,native,perennial ,vine
+2023,9,26,mow,SX,yes,1,0,SOLCAR,3,Solanum carolinense,native,perennial ,forb
+2023,9,27,mow,SB,yes,0,0,BARE,2,,,,
+2023,9,27,mow,SB,yes,0,0,LITTER,98,,,,
+2023,9,27,mow,SB,yes,1,0,POAPRA,40,Poa pratensis ,introduced,perennial ,grass
+2023,9,27,mow,SB,yes,1,0,DACGLO,4,Dactylis glomerata,introduced,perennial ,grass
+2023,9,27,mow,SB,yes,1,0,AMBTRI,1,Ambrosia trifida ,native,annual ,forb
+2023,9,27,mow,SB,yes,1,0,LOTCOR,15,Lotus corniculatus ,introduced,perennial ,legume
+2023,9,27,mow,SB,yes,1,0,SOLCAN,53,Solidago canadensis ,native,perennial ,forb
+2023,9,27,mow,SB,yes,1,0,TRIREP,3,Trifolium repens ,introduced,perennial ,legume
+2023,9,27,mow,SB,yes,1,0,BROINE,17,Bromus inermis ,introduced,perennial ,grass
+2023,9,27,mow,SB,yes,1,0,SOLCAR,2,Solanum carolinense,native,perennial ,forb
+2023,9,27,mow,SB,yes,1,0,CONARV,4,Convolvulus arvensis ,introduced,perennial ,forb
+2023,9,27,mow,SB,yes,1,0,DAUCAR,1,Daucus carota,introduced,biennial ,forb
+2023,10,28,mow,XX,yes,0,0,BARE,3,,,,
+2023,10,28,mow,XX,yes,0,0,LITTER,97,,,,
+2023,10,28,mow,XX,yes,1,0,SOLCAN,34,Solidago canadensis ,native,perennial ,forb
+2023,10,28,mow,XX,yes,1,0,ELAUMB,NA,Elaeagnus umbellata,introduced,perennial ,woody
+2023,10,28,mow,XX,yes,1,0,TRIPRA,22,Trifolium pratense,introduced,biennial ,legume
+2023,10,28,mow,XX,yes,1,0,DAUCAR,10,Daucus carota,introduced,biennial ,forb
+2023,10,28,mow,XX,yes,1,0,POAPRA,46,Poa pratensis ,introduced,perennial ,grass
+2023,10,28,mow,XX,yes,1,0,PASSAT,2,Pastinaca sativa ,introduced,biennial ,forb
+2023,10,28,mow,XX,yes,1,0,BROINE,25,Bromus inermis ,introduced,perennial ,grass
+2023,10,28,mow,XX,yes,1,0,DACGLO,12,Dactylis glomerata,introduced,perennial ,grass
+2023,10,28,mow,XX,yes,1,0,TRIREP,1,Trifolium repens ,introduced,perennial ,legume
+2023,10,28,mow,XX,yes,1,0,PLALAN,1,Plantago lanceolata ,introduced,perennial ,forb
+2023,10,29,mow,SX,yes,0,0,BARE,5,,,,
+2023,10,29,mow,SX,yes,0,0,LITTER,95,,,,
+2023,10,29,mow,SX,yes,1,0,POAPRA,60,Poa pratensis ,introduced,perennial ,grass
+2023,10,29,mow,SX,yes,1,0,PLALAN,4,Plantago lanceolata ,introduced,perennial ,forb
+2023,10,29,mow,SX,yes,1,0,DACGLO,5,Dactylis glomerata,introduced,perennial ,grass
+2023,10,29,mow,SX,yes,1,0,SYMLAE,3,Symphyotrichum laeve ,native,perennial ,forb
+2023,10,29,mow,SX,yes,1,0,SOLCAN,25,Solidago canadensis ,native,perennial ,forb
+2023,10,29,mow,SX,yes,1,0,TRIPRA,11,Trifolium pratense,introduced,biennial ,legume
+2023,10,29,mow,SX,yes,1,0,BROINE,25,Bromus inermis ,introduced,perennial ,grass
+2023,10,29,mow,SX,yes,1,0,FESARU,3,Festuca arundinacea,introduced,perennial ,grass
+2023,10,29,mow,SX,yes,1,0,CONARV,NA,Convolvulus arvensis ,introduced,perennial ,forb
+2023,10,29,mow,SX,yes,1,0,SOLCAR,1,Solanum carolinense,native,perennial ,forb
+2023,10,29,mow,SX,yes,1,0,APOCAN,1,Apocynum cannabinum ,native,perennial ,forb
+2023,10,29,mow,SX,yes,1,0,TAROFF,NA,Taraxacum officnale ,introduced,perennial ,forb
+2023,10,29,mow,SX,yes,1,0,CONARV,1,Convolvulus arvensis ,introduced,perennial ,forb
+2023,10,30,mow,SB,yes,0,0,BARE,2,,,,
+2023,10,30,mow,SB,yes,0,0,LITTER,98,,,,
+2023,10,30,mow,SB,yes,1,0,SOLCAN,44,Solidago canadensis ,native,perennial ,forb
+2023,10,30,mow,SB,yes,1,0,TRIPRA,8,Trifolium pratense,introduced,biennial ,legume
+2023,10,30,mow,SB,yes,1,0,TRIREP,1,Trifolium repens ,introduced,perennial ,legume
+2023,10,30,mow,SB,yes,1,0,MONFIS,10,Mondarda fistulosa ,native,perennial ,legume
+2023,10,30,mow,SB,yes,1,0,DAUCAR,2,Daucus carota,introduced,biennial ,forb
+2023,10,30,mow,SB,yes,1,0,PASSAT,5,Pastinaca sativa ,introduced,biennial ,forb
+2023,10,30,mow,SB,yes,1,0,CONARV,1,Convolvulus arvensis ,introduced,perennial ,forb
+2023,10,30,mow,SB,yes,1,0,MEDLUP,1,Medicago lupulina ,introduced,perennial ,legume
+2023,10,30,mow,SB,yes,1,0,POAPRA,50,Poa pratensis ,introduced,perennial ,grass
+2023,10,30,mow,SB,yes,1,0,PLALAN,4,Plantago lanceolata ,introduced,perennial ,forb
+2023,10,30,mow,SB,yes,1,0,BROINE,5,Bromus inermis ,introduced,perennial ,grass
+2023,10,30,mow,SB,yes,1,0,FESARU,23,Festuca arundinacea,introduced,perennial ,grass
+2023,10,30,mow,SB,yes,1,0,Scirpus spp ,3,Scirpus spp ,native,perennial ,grass
+2023,12,34,mow,XX,yes,1,0,SOLCAN,27,Solidago canadensis ,native,perennial ,forb
+2023,12,34,mow,XX,yes,1,0,POAPRA,35,Poa pratensis ,introduced,perennial ,grass
+2023,12,34,mow,XX,yes,0,0,BARE,2,,,,
+2023,12,34,mow,XX,yes,0,0,LITTER,98,,,,
+2023,12,34,mow,XX,yes,1,0,DAUCAR,2,Daucus carota,introduced,biennial ,forb
+2023,12,34,mow,XX,yes,1,0,BROINE,54,Bromus inermis ,introduced,perennial ,grass
+2023,12,34,mow,XX,yes,1,0,TRIPRA,16,Trifolium pratense,introduced,biennial ,legume
+2023,12,34,mow,XX,yes,1,0,AMBART,0.1,Ambrosia artemisiifolia,native,annual ,forb
+2023,12,34,mow,XX,yes,1,0,FESARU,38,Festuca arundinacea,introduced,perennial ,grass
+2023,12,34,mow,XX,yes,1,0,PASSAT,0.1,Pastinaca sativa ,introduced,biennial ,forb
+2023,12,34,mow,XX,yes,0,0,BARE,2,,,,
+2023,12,34,mow,XX,yes,0,0,LITTER,98,,,,
+2023,12,34,mow,XX,yes,1,0,BROINE,55,Bromus inermis ,introduced,perennial ,grass
+2023,12,34,mow,XX,yes,1,0,SOLCAR,1,Solanum carolinense,native,perennial ,forb
+2023,12,34,mow,XX,yes,1,0,SOLCAN,2,Solidago canadensis ,native,perennial ,forb
+2023,12,34,mow,XX,yes,1,0,FESARU,45,Festuca arundinacea,introduced,perennial ,grass
+2023,12,34,mow,XX,yes,1,0,POAPRA,30,Poa pratensis ,introduced,perennial ,grass
+2023,12,34,mow,XX,yes,1,0,CONARV,1,Convolvulus arvensis ,introduced,perennial ,forb
+2023,12,34,mow,XX,yes,1,0,AMBART,0.1,Ambrosia artemisiifolia,native,annual ,forb
+2023,12,34,mow,XX,yes,1,0,MONFIS,6,Mondarda fistulosa ,native,perennial ,legume
+2023,12,34,mow,XX,yes,1,0,TRIPRA,5,Trifolium pratense,introduced,biennial ,legume
+2023,12,34,mow,XX,yes,1,0,DAUCAR,21,Daucus carota,introduced,biennial ,forb
+2023,12,34,mow,XX,yes,1,0,AMBTRI,1,Ambrosia trifida ,native,annual ,forb
+2023,12,35,mow,SX,yes,0,0,BARE,4,,,,
+2023,12,35,mow,SX,yes,0,0,LITTER,96,,,,
+2023,12,35,mow,SX,yes,1,0,POAPRA,65,Poa pratensis ,introduced,perennial ,grass
+2023,12,35,mow,SX,yes,1,0,TRIREP,1,Trifolium repens ,introduced,perennial ,legume
+2023,12,35,mow,SX,yes,1,0,MONFIS,12,Mondarda fistulosa ,native,perennial ,legume
+2023,12,35,mow,SX,yes,1,0,SOLCAN,51,Solidago canadensis ,native,perennial ,forb
+2023,12,35,mow,SX,yes,1,0,BROINE,15,Bromus inermis ,introduced,perennial ,grass
+2023,12,35,mow,SX,yes,1,0,DAUCAR,0.5,Daucus carota,introduced,biennial ,forb
+2023,12,35,mow,SX,yes,1,0,TRIPRA,8,Trifolium pratense,introduced,biennial ,legume
+2023,12,35,mow,SX,yes,1,0,FESARU,20,Festuca arundinacea,introduced,perennial ,grass
+2023,12,35,mow,SX,yes,1,0,DACGLO,10,Dactylis glomerata,introduced,perennial ,grass
+2023,12,35,mow,SX,yes,1,0,PHLPRA,6,Phleum pratense,introduced,perennial ,grass
+2023,12,35,mow,SX,yes,0,0,BARE,3,,,,
+2023,12,35,mow,SX,yes,0,0,LITTER,97,,,,
+2023,12,35,mow,SX,yes,1,0,MEDSAT,15,Medicago sativa,introduced,perennial ,legume
+2023,12,35,mow,SX,yes,1,0,DAUCAR,1,Daucus carota,introduced,biennial ,forb
+2023,12,35,mow,SX,yes,1,1,UK Forb,1,unknown forb,,,forb
+2023,12,35,mow,SX,yes,1,0,SOLCAN,32,Solidago canadensis ,native,perennial ,forb
+2023,12,35,mow,SX,yes,1,0,MONFIS,6,Mondarda fistulosa ,native,perennial ,legume
+2023,12,35,mow,SX,yes,1,0,POAPRA,40,Poa pratensis ,introduced,perennial ,grass
+2023,12,35,mow,SX,yes,1,0,BROINE,28,Bromus inermis ,introduced,perennial ,grass
+2023,12,35,mow,SX,yes,1,0,FESARU,30,Festuca arundinacea,introduced,perennial ,grass
+2023,12,35,mow,SX,yes,1,0,PASSAT,0.1,Pastinaca sativa ,introduced,biennial ,forb
+2023,12,36,mow,SB,yes,0,0,BARE,4,,,,
+2023,12,36,mow,SB,yes,0,0,LITTER,96,,,,
+2023,12,36,mow,SB,yes,1,0,SYMLAE,2,Symphyotrichum laeve ,native,perennial ,forb
+2023,12,36,mow,SB,yes,1,0,BROINE,15,Bromus inermis ,introduced,perennial ,grass
+2023,12,36,mow,SB,yes,1,0,CONARV,1,Convolvulus arvensis ,introduced,perennial ,forb
+2023,12,36,mow,SB,yes,1,0,SOLCAN,55,Solidago canadensis ,native,perennial ,forb
+2023,12,36,mow,SB,yes,1,0,POAPRA,70,Poa pratensis ,introduced,perennial ,grass
+2023,12,36,mow,SB,yes,1,0,TAROFF,1,Taraxacum officnale ,introduced,perennial ,forb
+2023,12,36,mow,SB,yes,1,0,TRIPRA,12,Trifolium pratense,introduced,biennial ,legume
+2023,12,36,mow,SB,yes,1,0,FESARU,45,Festuca arundinacea,introduced,perennial ,grass
+2023,12,36,mow,SB,yes,1,0,MONFIS,0.5,Mondarda fistulosa ,native,perennial ,legume
+2023,12,36,mow,SB,yes,0,0,BARE,2,,,,
+2023,12,36,mow,SB,yes,0,0,LITTER,98,,,,
+2023,12,36,mow,SB,yes,1,0,BROINE,26,Bromus inermis ,introduced,perennial ,grass
+2023,12,36,mow,SB,yes,1,0,TRIPRA,20,Trifolium pratense,introduced,biennial ,legume
+2023,12,36,mow,SB,yes,1,0,SOLCAR,1,Solanum carolinense,native,perennial ,forb
+2023,12,36,mow,SB,yes,1,1,UK Forb,0.1,unknown forb,,,forb
+2023,12,36,mow,SB,yes,1,0,SOLCAN,18,Solidago canadensis ,native,perennial ,forb
+2023,12,36,mow,SB,yes,1,0,DAUCAR,7,Daucus carota,introduced,biennial ,forb
+2023,12,36,mow,SB,yes,1,0,FESARU,45,Festuca arundinacea,introduced,perennial ,grass
+2023,12,36,mow,SB,yes,1,0,POAPRA,18,Poa pratensis ,introduced,perennial ,grass
+2023,12,36,mow,SB,yes,1,0,PASSAT,0.1,Pastinaca sativa ,introduced,biennial ,forb
+2023,13,37,herbicide,XX,yes,0,0,BARE,98,,,,
+2023,13,37,herbicide,XX,yes,0,0,LITTER,2,,,,
+2023,13,37,herbicide,XX,yes,1,0,TRIPRA,20,Trifolium pratense,introduced,biennial ,legume
+2023,13,37,herbicide,XX,yes,1,0,POAPRA,10,Poa pratensis ,introduced,perennial ,grass
+2023,13,37,herbicide,XX,yes,1,0,BRYOPH,0.1,NA,,perennial ,moss
+2023,13,37,herbicide,XX,yes,1,0,AMBART,36,Ambrosia artemisiifolia,native,annual ,forb
+2023,13,37,herbicide,XX,yes,1,0,PHLPRA,41,Phleum pratense,introduced,perennial ,grass
+2023,13,37,herbicide,XX,yes,1,0,OXASTR,4,Oxalis stricta ,native,perennial ,forb
+2023,13,37,herbicide,XX,yes,1,0,PLALAN,1,Plantago lanceolata ,introduced,perennial ,forb
+2023,13,37,herbicide,XX,yes,1,0,MONFIS,1,Mondarda fistulosa ,native,perennial ,legume
+2023,13,37,herbicide,XX,yes,1,0,CONCAN,8,Conyza canadensis,native,annual ,forb
+2023,13,37,herbicide,XX,yes,1,0,DAUCAR,2,Daucus carota,introduced,biennial ,forb
+2023,13,37,herbicide,XX,yes,1,0,BROINE,15,Bromus inermis ,introduced,perennial ,grass
+2023,13,37,herbicide,XX,yes,1,0,TRIREP,2,Trifolium repens ,introduced,perennial ,legume
+2023,13,38,herbicide,SX,yes,0,0,BARE,97,,,,
+2023,13,38,herbicide,SX,yes,0,0,LITTER,3,,,,
+2023,13,38,herbicide,SX,yes,1,0,ERIANN,55,Erigeron annuus ,native,annual ,forb
+2023,13,38,herbicide,SX,yes,1,0,BROINE,5,Bromus inermis ,introduced,perennial ,grass
+2023,13,38,herbicide,SX,yes,1,1,UK Forb,NA,unknown forb,,,forb
+2023,13,38,herbicide,SX,yes,1,0,TRIPRA,6,Trifolium pratense,introduced,biennial ,legume
+2023,13,38,herbicide,SX,yes,1,0,CONCAN,27,Conyza canadensis,native,annual ,forb
+2023,13,38,herbicide,SX,yes,1,0,PHLPRA,18,Phleum pratense,introduced,perennial ,grass
+2023,13,38,herbicide,SX,yes,1,0,AMBART,4,Ambrosia artemisiifolia,native,annual ,forb
+2023,13,38,herbicide,SX,yes,1,0,POAPRA,22,Poa pratensis ,introduced,perennial ,grass
+2023,13,38,herbicide,SX,yes,1,0,MONFIS,1,Mondarda fistulosa ,native,perennial ,legume
+2023,13,38,herbicide,SX,yes,1,0,STEMED,0.1,Stellaria media,introduced,annual ,forb
+2023,13,38,herbicide,SX,yes,1,0,OXASTR,4,Oxalis stricta ,native,perennial ,forb
+2023,13,38,herbicide,SX,yes,1,0,BRYOPH,6,NA,,perennial ,moss
+2023,13,38,herbicide,SX,yes,1,0,SOLCAR,1,Solanum carolinense,native,perennial ,forb
+2023,13,38,herbicide,SX,yes,1,0,SYMLAE,11,Symphyotrichum laeve ,native,perennial ,forb
+2023,13,38,herbicide,SX,yes,1,0,DAUCAR,12,Daucus carota,introduced,biennial ,forb
+2023,13,39,herbicide,SB,yes,0,0,BARE,95,,,,
+2023,13,39,herbicide,SB,yes,0,0,LITTER,5,,,,
+2023,13,39,herbicide,SB,yes,1,0,PLALAN,1,Plantago lanceolata ,introduced,perennial ,forb
+2023,13,39,herbicide,SB,yes,1,0,Scirpus spp ,4,Scirpus spp ,native,perennial ,grass
+2023,13,39,herbicide,SB,yes,1,0,BRYOPH,3,NA,,perennial ,moss
+2023,13,39,herbicide,SB,yes,1,0,AMBART,53,Ambrosia artemisiifolia,native,annual ,forb
+2023,13,39,herbicide,SB,yes,1,0,TRIPRA,13,Trifolium pratense,introduced,biennial ,legume
+2023,13,39,herbicide,SB,yes,1,0,OXASTR,0.1,Oxalis stricta ,native,perennial ,forb
+2023,13,39,herbicide,SB,yes,1,0,Carex Spp ,NA,Carex spp ,native,perennial ,grass
+2023,13,39,herbicide,SB,yes,1,0,BROINE,3,Bromus inermis ,introduced,perennial ,grass
+2023,13,39,herbicide,SB,yes,1,0,TRIREP,2,Trifolium repens ,introduced,perennial ,legume
+2023,13,39,herbicide,SB,yes,1,0,FESARU,2,Festuca arundinacea,introduced,perennial ,grass
+2023,13,39,herbicide,SB,yes,1,0,CONCAN,10,Conyza canadensis,native,annual ,forb
+2023,14,40,herbicide,XX,yes,1,0,CONCAN,15,Conyza canadensis,native,annual ,forb
+2023,14,40,herbicide,XX,yes,1,0,AMBART,70,Ambrosia artemisiifolia,native,annual ,forb
+2023,14,40,herbicide,XX,yes,1,0,VERURT,1,Verbena urticifolia ,native,perennial ,forb
+2023,14,40,herbicide,XX,yes,1,0,ABUTHE,1,Abutilon theophrasti,introduced,annual ,forb
+2023,14,40,herbicide,XX,yes,1,1,UK Forb,1,unknown forb,,,forb
+2023,14,40,herbicide,XX,yes,1,0,ARCLAP,NA,Arctium lappa ,introduced,biennial ,
+2023,14,40,herbicide,XX,yes,1,0,DIPLAC,4,Dipsacus laciniatus,introduced,perennial ,forb
+2023,14,40,herbicide,XX,yes,1,0,PLALAN,6,Plantago lanceolata ,introduced,perennial ,forb
+2023,14,40,herbicide,XX,yes,1,0,DAUCAR,27,Daucus carota,introduced,biennial ,forb
+2023,14,40,herbicide,XX,yes,1,1,UK Forb,NA,unknown forb,,,forb
+2023,14,40,herbicide,XX,yes,1,0,TRIPRA,12,Trifolium pratense,introduced,biennial ,legume
+2023,14,40,herbicide,XX,yes,0,0,BARE,98,,,,
+2023,14,40,herbicide,XX,yes,0,0,LITTER,2,,,,
+2023,14,41,herbicide,SX,yes,0,0,BARE,99,,,,
+2023,14,41,herbicide,SX,yes,0,0,LITTER,1,,,,
+2023,14,41,herbicide,SX,yes,1,0,PLALAN,6,Plantago lanceolata ,introduced,perennial ,forb
+2023,14,41,herbicide,SX,yes,1,0,STEMED,2,Stellaria media,introduced,annual ,forb
+2023,14,41,herbicide,SX,yes,1,0,LESCAP,10,Lespedeza capitata,native,perennial ,legume
+2023,14,41,herbicide,SX,yes,1,0,CONCAN,19,Conyza canadensis,native,annual ,forb
+2023,14,41,herbicide,SX,yes,1,0,AMBART,60,Ambrosia artemisiifolia,native,annual ,forb
+2023,14,41,herbicide,SX,yes,1,0,TRIPRA,34,Trifolium pratense,introduced,biennial ,legume
+2023,14,41,herbicide,SX,yes,1,0,VERURT,1,Verbena urticifolia ,native,perennial ,forb
+2023,14,41,herbicide,SX,yes,1,0,DAUCAR,15,Daucus carota,introduced,biennial ,forb
+2023,14,41,herbicide,SX,yes,1,0,OXASTR,2,Oxalis stricta ,native,perennial ,forb
+2023,14,41,herbicide,SX,yes,1,0,RUMCRI,3,Rumex crispus ,introduced,perennial ,forb
+2023,14,42,herbicide,SB,yes,0,0,BARE,99,,,,
+2023,14,42,herbicide,SB,yes,0,0,LITTER,1,,,,
+2023,14,42,herbicide,SB,yes,1,0,STEMED,2,Stellaria media,introduced,annual ,forb
+2023,14,42,herbicide,SB,yes,1,0,AMBART,40,Ambrosia artemisiifolia,native,annual ,forb
+2023,14,42,herbicide,SB,yes,1,0,AMBTRI,28,Ambrosia trifida ,native,annual ,forb
+2023,14,42,herbicide,SB,yes,1,0,VERURT,1,Verbena urticifolia ,native,perennial ,forb
+2023,14,42,herbicide,SB,yes,1,0,TRIREP,15,Trifolium repens ,introduced,perennial ,legume
+2023,14,42,herbicide,SB,yes,1,0,POAPRA,2,Poa pratensis ,introduced,perennial ,grass
+2023,14,42,herbicide,SB,yes,1,0,Carex Spp ,3,Carex spp ,native,perennial ,grass
+2023,15,43,herbicide,XX,yes,0,0,BARE,98,,,,
+2023,15,43,herbicide,XX,yes,0,0,LITTER,2,,,,
+2023,15,43,herbicide,XX,yes,1,0,CONARV,1,Convolvulus arvensis ,introduced,perennial ,forb
+2023,15,43,herbicide,XX,yes,1,0,POAPRA,10,Poa pratensis ,introduced,perennial ,grass
+2023,15,43,herbicide,XX,yes,1,0,LESCAP,1,Lespedeza capitata,native,perennial ,legume
+2023,15,43,herbicide,XX,yes,1,0,DIPLAC,20,Dipsacus laciniatus,introduced,perennial ,forb
+2023,15,43,herbicide,XX,yes,1,0,SINARV,30,Sinapis arvensis ,introduced,annual ,forb
+2023,15,43,herbicide,XX,yes,1,0,OXASTR,1,Oxalis stricta ,native,perennial ,forb
+2023,15,43,herbicide,XX,yes,1,0,BROINE,2,Bromus inermis ,introduced,perennial ,grass
+2023,15,43,herbicide,XX,yes,1,0,DAUCAR,35,Daucus carota,introduced,biennial ,forb
+2023,15,43,herbicide,XX,yes,1,0,TRIREP,8,Trifolium repens ,introduced,perennial ,legume
+2023,15,43,herbicide,XX,yes,1,0,MEDLUP,2,Medicago lupulina ,introduced,perennial ,legume
+2023,15,44,herbicide,SX,yes,0,0,BARE,98,,,,
+2023,15,44,herbicide,SX,yes,0,0,LITTER,2,,,,
+2023,15,44,herbicide,SX,yes,1,0,AMBART,31,Ambrosia artemisiifolia,native,annual ,forb
+2023,15,44,herbicide,SX,yes,1,0,SINARV,18,Sinapis arvensis ,introduced,annual ,forb
+2023,15,44,herbicide,SX,yes,1,1,UK Forb,8,unknown forb,,,forb
+2023,15,44,herbicide,SX,yes,1,0,LESCAP,20,Lespedeza capitata,native,perennial ,legume
+2023,15,44,herbicide,SX,yes,1,0,POAPRA,3,Poa pratensis ,introduced,perennial ,grass
+2023,15,44,herbicide,SX,yes,1,0,DAUCAR,33,Daucus carota,introduced,biennial ,forb
+2023,15,44,herbicide,SX,yes,1,0,TRIPRA,12,Trifolium pratense,introduced,biennial ,legume
+2023,15,44,herbicide,SX,yes,1,0,CONARV,0.1,Convolvulus arvensis ,introduced,perennial ,forb
+2023,15,44,herbicide,SX,yes,1,0,CONCAN,6,Conyza canadensis,native,annual ,forb
+2023,15,44,herbicide,SX,yes,1,0,OXASTR,1,Oxalis stricta ,native,perennial ,forb
+2023,15,44,herbicide,SX,yes,1,0,VERURT,0.3,Verbena urticifolia ,native,perennial ,forb
+2023,15,44,herbicide,SX,yes,1,0,ANDGER,3,Andropogon gerardii,native,perennial ,grass
+2023,15,44,herbicide,SX,yes,1,0,Carex Spp ,0.2,Carex spp ,native,perennial ,grass
+2023,15,44,herbicide,SX,yes,1,0,FESARU,1,Festuca arundinacea,introduced,perennial ,grass
+2023,15,45,herbicide,SB,yes,0,0,BARE,99,,,,
+2023,15,45,herbicide,SB,yes,0,0,LITTER,1,,,,
+2023,15,45,herbicide,SB,yes,1,0,DAUCAR,13,Daucus carota,introduced,biennial ,forb
+2023,15,45,herbicide,SB,yes,1,0,CONARV,0.1,Convolvulus arvensis ,introduced,perennial ,forb
+2023,15,45,herbicide,SB,yes,1,0,OXASTR,0.2,Oxalis stricta ,native,perennial ,forb
+2023,15,45,herbicide,SB,yes,1,0,SINARV,6,Sinapis arvensis ,introduced,annual ,forb
+2023,15,45,herbicide,SB,yes,1,0,POAPRA,3,Poa pratensis ,introduced,perennial ,grass
+2023,15,45,herbicide,SB,yes,1,0,TRIPRA,6,Trifolium pratense,introduced,biennial ,legume
+2023,15,45,herbicide,SB,yes,1,0,AMBART,45,Ambrosia artemisiifolia,native,annual ,forb
+2023,15,45,herbicide,SB,yes,1,0,TRIREP,0.5,Trifolium repens ,introduced,perennial ,legume
+2023,16,46,herbicide,XX,yes,1,0,DAUCAR,30,Daucus carota,introduced,biennial ,forb
+2023,16,46,herbicide,XX,yes,1,0,CIRARV,27,Cirsium arvense,introduced,perennial ,forb
+2023,16,46,herbicide,XX,yes,1,0,POAPRA,2,Poa pratensis ,introduced,perennial ,grass
+2023,16,46,herbicide,XX,yes,1,0,SINARV,13,Sinapis arvensis ,introduced,annual ,forb
+2023,16,46,herbicide,XX,yes,1,0,BROINE,98,Bromus inermis ,introduced,perennial ,grass
+2023,16,46,herbicide,XX,yes,1,0,TRIPRA,5,Trifolium pratense,introduced,biennial ,legume
+2023,16,46,herbicide,XX,yes,1,0,CONCAN,8,Conyza canadensis,native,annual ,forb
+2023,16,46,herbicide,XX,yes,0,0,BARE,98,,,,
+2023,16,46,herbicide,XX,yes,0,0,LITTER,2,,,,
+2023,16,47,herbicide,SX,yes,0,0,BARE,99,,,,
+2023,16,47,herbicide,SX,yes,0,0,LITTER,1,,,,
+2023,16,47,herbicide,SX,yes,1,0,BROINE,4,Bromus inermis ,introduced,perennial ,grass
+2023,16,47,herbicide,SX,yes,1,0,DAUCAR,22,Daucus carota,introduced,biennial ,forb
+2023,16,47,herbicide,SX,yes,1,0,AMBART,62,Ambrosia artemisiifolia,native,annual ,forb
+2023,16,47,herbicide,SX,yes,1,0,SINARV,50,Sinapis arvensis ,introduced,annual ,forb
+2023,16,47,herbicide,SX,yes,1,0,TRIPRA,NA,Trifolium pratense,introduced,biennial ,legume
+2023,16,47,herbicide,SX,yes,1,0,POAPRA,8,Poa pratensis ,introduced,perennial ,grass
+2023,16,47,herbicide,SX,yes,1,0,PLALAN,2,Plantago lanceolata ,introduced,perennial ,forb
+2023,16,48,herbicide,SB,yes,0,0,BARE,99,,,,
+2023,16,48,herbicide,SB,yes,0,0,LITTER,1,,,,
+2023,16,48,herbicide,SB,yes,1,0,DAUCAR,6,Daucus carota,introduced,biennial ,forb
+2023,16,48,herbicide,SB,yes,1,0,TRIPRA,8,Trifolium pratense,introduced,biennial ,legume
+2023,16,48,herbicide,SB,yes,1,0,AMBART,75,Ambrosia artemisiifolia,native,annual ,forb
+2023,16,48,herbicide,SB,yes,1,0,SINARV,10,Sinapis arvensis ,introduced,annual ,forb
+2023,16,48,herbicide,SB,yes,1,0,PLALAN,8,Plantago lanceolata ,introduced,perennial ,forb
+2023,16,48,herbicide,SB,yes,1,0,POAPRA,6,Poa pratensis ,introduced,perennial ,grass
+2023,16,48,herbicide,SB,yes,1,0,OXASTR,1,Oxalis stricta ,native,perennial ,forb
+2023,10,49,mow,SB,yes,1,0,DAUCAR,22,Daucus carota,introduced,biennial ,forb
+2023,10,49,mow,SB,yes,1,0,AMBART,30,Ambrosia artemisiifolia,native,annual ,forb
+2023,10,49,mow,SB,yes,1,0,SINARV,6,Sinapis arvensis ,introduced,annual ,forb
+2023,10,49,mow,SB,yes,1,0,MEDLUP,4,Medicago lupulina ,introduced,perennial ,legume
+2023,10,49,mow,SB,yes,0,0,BARE,99,,,,
+2023,10,49,mow,SB,yes,1,0,TRIPRA,33,Trifolium pratense,introduced,biennial ,legume
+2023,10,49,mow,SB,yes,1,0,POAPRA,4,Poa pratensis ,introduced,perennial ,grass
+2023,10,49,mow,SB,yes,1,0,CONARV,2,Convolvulus arvensis ,introduced,perennial ,forb
+2023,10,49,mow,SB,yes,1,0,CIRARV,4,Cirsium arvense,introduced,perennial ,forb
+2023,10,49,mow,SB,yes,0,0,LITTER,1,,,,
+2023,10,49,mow,SB,yes,1,0,PHLPRA,12,Phleum pratense,introduced,perennial ,grass
+2023,10,49,mow,SB,yes,1,0,BROINE,2,Bromus inermis ,introduced,perennial ,grass
+2023,10,49,mow,SB,yes,1,0,OXASTR,0.5,Oxalis stricta ,native,perennial ,forb
+2023,10,49,mow,SB,yes,1,0,ERIANN,12,Erigeron annuus ,native,annual ,forb
+2023,17,50,herbicide,SX,yes,0,0,BARE,99,,,,
+2023,17,50,herbicide,SX,yes,0,0,LITTER,1,,,,
+2023,17,50,herbicide,SX,yes,1,0,SINARV,32,Sinapis arvensis ,introduced,annual ,forb
+2023,17,50,herbicide,SX,yes,1,0,POAPRA,6,Poa pratensis ,introduced,perennial ,grass
+2023,17,50,herbicide,SX,yes,1,0,DAUCAR,65,Daucus carota,introduced,biennial ,forb
+2023,17,50,herbicide,SX,yes,1,0,AMBART,55,Ambrosia artemisiifolia,native,annual ,forb
+2023,17,50,herbicide,SX,yes,1,0,CICINT,8,Cichorium intybus,introduced,biennial ,forb
+2023,17,50,herbicide,SX,yes,1,0,CONCAN,6,Conyza canadensis,native,annual ,forb
+2023,17,50,herbicide,SX,yes,1,0,TAROFF,2,Taraxacum officnale ,introduced,perennial ,forb
+2023,17,50,herbicide,SX,yes,1,0,CONARV,2,Convolvulus arvensis ,introduced,perennial ,forb
+2023,17,50,herbicide,SX,yes,1,0,MEDLUP,1,Medicago lupulina ,introduced,perennial ,legume
+2023,17,50,herbicide,SX,yes,1,0,TRIPRA,4,Trifolium pratense,introduced,biennial ,legume
+2023,17,50,herbicide,SX,yes,1,0,OXASTR,0.1,Oxalis stricta ,native,perennial ,forb
+2023,17,50,herbicide,SX,yes,1,0,BROINE,5,Bromus inermis ,introduced,perennial ,grass
+2023,17,51,herbicide,SB,yes,0,0,BARE,98,,,,
+2023,17,51,herbicide,SB,yes,0,0,LITTER,2,,,,
+2023,17,51,herbicide,SB,yes,1,0,TRIPRA,12,Trifolium pratense,introduced,biennial ,legume
+2023,17,51,herbicide,SB,yes,1,0,POAPRA,4,Poa pratensis ,introduced,perennial ,grass
+2023,17,51,herbicide,SB,yes,1,0,OXASTR,1,Oxalis stricta ,native,perennial ,forb
+2023,17,51,herbicide,SB,yes,1,0,CONCAN,3,Conyza canadensis,native,annual ,forb
+2023,17,51,herbicide,SB,yes,1,0,AMBART,53,Ambrosia artemisiifolia,native,annual ,forb
+2023,17,51,herbicide,SB,yes,1,0,CONARV,1,Convolvulus arvensis ,introduced,perennial ,forb
+2023,17,51,herbicide,SB,yes,1,0,BROINE,7,Bromus inermis ,introduced,perennial ,grass
+2023,17,51,herbicide,SB,yes,1,0,DAUCAR,8,Daucus carota,introduced,biennial ,forb
+2023,17,51,herbicide,SB,yes,1,0,SINARV,25,Sinapis arvensis ,introduced,annual ,forb
+2023,17,51,herbicide,SB,yes,1,0,TRIREP,1,Trifolium repens ,introduced,perennial ,legume
+2023,17,51,herbicide,SB,yes,1,0,SYMLAE,1,Symphyotrichum laeve ,native,perennial ,forb
+2023,18,52,herbicide,XX,yes,1,0,CONCAN,8,Conyza canadensis,native,annual ,forb
+2023,18,52,herbicide,XX,yes,1,0,AMBART,65,Ambrosia artemisiifolia,native,annual ,forb
+2023,18,52,herbicide,XX,yes,1,0,POAPRA,10,Poa pratensis ,introduced,perennial ,grass
+2023,18,52,herbicide,XX,yes,1,0,MACPOM,10,Maclura pomifera,native,perennial ,woody
+2023,18,52,herbicide,XX,yes,1,0,MEDLUP,1,Medicago lupulina ,introduced,perennial ,legume
+2023,18,52,herbicide,XX,yes,1,0,TRIPRA,5,Trifolium pratense,introduced,biennial ,legume
+2023,18,52,herbicide,XX,yes,1,0,OXASTR,3,Oxalis stricta ,native,perennial ,forb
+2023,18,52,herbicide,XX,yes,1,0,CONARV,1,Convolvulus arvensis ,introduced,perennial ,forb
+2023,18,52,herbicide,XX,yes,1,0,SINARV,5,Sinapis arvensis ,introduced,annual ,forb
+2023,18,52,herbicide,XX,yes,1,0,DAUCAR,7,Daucus carota,introduced,biennial ,forb
+2023,18,52,herbicide,XX,yes,0,0,BARE,98,,,,
+2023,18,52,herbicide,XX,yes,0,0,LITTER,2,,,,
+2023,18,52,herbicide,XX,yes,1,0,SYMLAE,1,Symphyotrichum laeve ,native,perennial ,forb
+2023,18,53,herbicide,SX,yes,0,0,BARE,99,,,,
+2023,18,53,herbicide,SX,yes,0,0,LITTER,1,,,,
+2023,18,53,herbicide,SX,yes,1,0,CONCAN,5,Conyza canadensis,native,annual ,forb
+2023,18,53,herbicide,SX,yes,1,0,DAUCAR,6,Daucus carota,introduced,biennial ,forb
+2023,18,53,herbicide,SX,yes,1,0,MEDLUP,1,Medicago lupulina ,introduced,perennial ,legume
+2023,18,53,herbicide,SX,yes,1,0,POAPRA,NA,Poa pratensis ,introduced,perennial ,grass
+2023,18,53,herbicide,SX,yes,1,0,AMBART,26,Ambrosia artemisiifolia,native,annual ,forb
+2023,18,53,herbicide,SX,yes,1,0,TRIPRA,12,Trifolium pratense,introduced,biennial ,legume
+2023,18,53,herbicide,SX,yes,1,0,TRIREP,2,Trifolium repens ,introduced,perennial ,legume
+2023,18,53,herbicide,SX,yes,1,0,CONARV,1,Convolvulus arvensis ,introduced,perennial ,forb
+2023,18,53,herbicide,SX,yes,1,0,SYMLAE,22,Symphyotrichum laeve ,native,perennial ,forb
+2023,18,53,herbicide,SX,yes,1,0,SINARV,16,Sinapis arvensis ,introduced,annual ,forb
+2023,18,53,herbicide,SX,yes,1,0,OXASTR,1,Oxalis stricta ,native,perennial ,forb
+2023,18,53,herbicide,SX,yes,1,0,PLALAN,2,Plantago lanceolata ,introduced,perennial ,forb
+2023,18,53,herbicide,SX,yes,1,0,POAPRA,3,Poa pratensis ,introduced,perennial ,grass
+2023,18,54,herbicide,SB,yes,1,0,TRIPRA,18,Trifolium pratense,introduced,biennial ,legume
+2023,18,54,herbicide,SB,yes,1,0,DAUCAR,6,Daucus carota,introduced,biennial ,forb
+2023,18,54,herbicide,SB,yes,1,0,STEMED,3,Stellaria media,introduced,annual ,forb
+2023,18,54,herbicide,SB,yes,1,0,VERURT,2,Verbena urticifolia ,native,perennial ,forb
+2023,18,54,herbicide,SB,yes,1,0,OXASTR,1,Oxalis stricta ,native,perennial ,forb
+2023,18,54,herbicide,SB,yes,1,0,PLALAN,2,Plantago lanceolata ,introduced,perennial ,forb
+2023,18,54,herbicide,SB,yes,1,0,POAPRA,8,Poa pratensis ,introduced,perennial ,grass
+2023,18,54,herbicide,SB,yes,1,0,ERISTR,3,Erigeron strigosus ,native,biennial ,forb
+2023,18,54,herbicide,SB,yes,0,0,BARE,98,,,,
+2023,18,54,herbicide,SB,yes,0,0,LITTER,2,,,,
+2023,18,54,herbicide,SB,yes,1,0,BROINE,3,Bromus inermis ,introduced,perennial ,grass
+2023,18,54,herbicide,SB,yes,1,0,AMBART,27,Ambrosia artemisiifolia,native,annual ,forb
+2023,19,55,control,XX,yes,1,0,SOLCAN,78,Solidago canadensis ,native,perennial ,forb
+2023,19,55,control,XX,yes,1,0,POAPRA,30,Poa pratensis ,introduced,perennial ,grass
+2023,19,55,control,XX,yes,1,0,FESARU,4,Festuca arundinacea,introduced,perennial ,grass
+2023,19,55,control,XX,yes,0,0,BARE,3,,,,
+2023,19,55,control,XX,yes,0,0,LITTER,97,,,,
+2023,19,55,control,XX,yes,1,0,DAUCAR,2,Daucus carota,introduced,biennial ,forb
+2023,19,55,control,XX,yes,1,0,BROINE,20,Bromus inermis ,introduced,perennial ,grass
+2023,19,55,control,XX,yes,1,0,AMBTRI,0.5,Ambrosia trifida ,native,annual ,forb
+2023,19,55,control,XX,yes,1,0,LOTCOR,8,Lotus corniculatus ,introduced,perennial ,legume
+2023,19,55,control,XX,yes,1,0,PHLPRA,6,Phleum pratense,introduced,perennial ,grass
+2023,19,56,control,SX,yes,1,0,BROINE,21,Bromus inermis ,introduced,perennial ,grass
+2023,19,56,control,SX,yes,1,0,LOTCOR,30,Lotus corniculatus ,introduced,perennial ,legume
+2023,19,56,control,SX,yes,1,0,AMBTRI,2,Ambrosia trifida ,native,annual ,forb
+2023,19,56,control,SX,yes,1,0,DAUCAR,1,Daucus carota,introduced,biennial ,forb
+2023,19,56,control,SX,yes,1,0,POAPRA,37,Poa pratensis ,introduced,perennial ,grass
+2023,19,56,control,SX,yes,1,0,AGRGIG,12,Agrostis gigantea,introduced,perennial ,grass
+2023,19,56,control,SX,yes,1,0,AMBART,0.5,Ambrosia artemisiifolia,native,annual ,forb
+2023,19,56,control,SX,yes,0,0,BARE,1,,,,
+2023,19,56,control,SX,yes,1,0,FESARU,99,Festuca arundinacea,introduced,perennial ,grass
+2023,19,56,control,SX,yes,0,0,LITTER,99,,,,
+2023,19,57,control,SB,yes,0,0,BARE,0,,,,
+2023,19,57,control,SB,yes,0,0,LITTER,100,,,,
+2023,19,57,control,SB,yes,1,0,AMBTRI,2,Ambrosia trifida ,native,annual ,forb
+2023,19,57,control,SB,yes,1,0,LOTCOR,28,Lotus corniculatus ,introduced,perennial ,legume
+2023,19,57,control,SB,yes,1,0,FESARU,33,Festuca arundinacea,introduced,perennial ,grass
+2023,19,57,control,SB,yes,1,0,POAPRA,47,Poa pratensis ,introduced,perennial ,grass
+2023,19,57,control,SB,yes,1,0,BROINE,42,Bromus inermis ,introduced,perennial ,grass
+2023,19,57,control,SB,yes,1,0,DACGLO,2,Dactylis glomerata,introduced,perennial ,grass
+2023,19,57,control,SB,yes,1,0,DAUCAR,3,Daucus carota,introduced,biennial ,forb
+2023,20,58,control,XX,yes,1,0,BROINE,88,Bromus inermis ,introduced,perennial ,grass
+2023,20,58,control,XX,yes,1,0,POAPRA,21,Poa pratensis ,introduced,perennial ,grass
+2023,20,58,control,XX,yes,1,0,DAUCAR,2,Daucus carota,introduced,biennial ,forb
+2023,20,58,control,XX,yes,1,0,FESARU,3,Festuca arundinacea,introduced,perennial ,grass
+2023,20,58,control,XX,yes,1,0,DACGLO,1,Dactylis glomerata,introduced,perennial ,grass
+2023,20,58,control,XX,yes,0,0,BARE,1,,,,
+2023,20,58,control,XX,yes,0,0,LITTER,99,,,,
+2023,20,58,control,XX,yes,1,0,TRIPRA,4,Trifolium pratense,introduced,biennial ,legume
+2023,20,58,control,XX,yes,1,0,SOLCAN,1,Solidago canadensis ,native,perennial ,forb
+2023,20,59,control,SX,yes,1,0,DACGLO,4,Dactylis glomerata,introduced,perennial ,grass
+2023,20,59,control,SX,yes,1,0,POAPRA,41,Poa pratensis ,introduced,perennial ,grass
+2023,20,59,control,SX,yes,1,0,FESARU,3,Festuca arundinacea,introduced,perennial ,grass
+2023,20,59,control,SX,yes,1,0,BROINE,78,Bromus inermis ,introduced,perennial ,grass
+2023,20,59,control,SX,yes,1,0,SOLCAN,2,Solidago canadensis ,native,perennial ,forb
+2023,20,59,control,SX,yes,1,0,TRIPRA,1,Trifolium pratense,introduced,biennial ,legume
+2023,20,59,control,SX,yes,1,0,LOTCOR,1,Lotus corniculatus ,introduced,perennial ,legume
+2023,20,59,control,SX,yes,1,0,SOLCAR,1,Solanum carolinense,native,perennial ,forb
+2023,20,60,control,SB,yes,1,0,SOLCAN,11,Solidago canadensis ,native,perennial ,forb
+2023,20,60,control,SB,yes,1,0,SOLCAR,2,Solanum carolinense,native,perennial ,forb
+2023,20,60,control,SB,yes,1,0,BROINE,60,Bromus inermis ,introduced,perennial ,grass
+2023,20,60,control,SB,yes,1,0,TRIPRA,3,Trifolium pratense,introduced,biennial ,legume
+2023,20,60,control,SB,yes,1,0,POAPRA,16,Poa pratensis ,introduced,perennial ,grass
+2023,20,60,control,SB,yes,1,0,PHLPRA,0.5,Phleum pratense,introduced,perennial ,grass
+2023,20,60,control,SB,yes,0,0,BARE,2,,,,
+2023,20,60,control,SB,yes,0,0,LITTER,98,,,,
+2023,20,60,control,SB,yes,1,0,DAUCAR,0.5,Daucus carota,introduced,biennial ,forb
+2023,20,60,control,SB,yes,1,0,LOTCOR,5,Lotus corniculatus ,introduced,perennial ,legume
+2023,20,60,control,SB,yes,1,0,FESARU,3,Festuca arundinacea,introduced,perennial ,grass
+2023,20,60,control,SB,yes,1,0,DACGLO,2,Dactylis glomerata,introduced,perennial ,grass
+2023,21,61,control,XX,yes,0,0,BARE,6,,,,
+2023,21,61,control,XX,yes,0,0,LITTER,94,,,,
+2023,21,61,control,XX,yes,1,0,BROINE,15,Bromus inermis ,introduced,perennial ,grass
+2023,21,61,control,XX,yes,1,0,AMBART,2,Ambrosia artemisiifolia,native,annual ,forb
+2023,21,61,control,XX,yes,1,0,SOLCAR,2,Solanum carolinense,native,perennial ,forb
+2023,21,61,control,XX,yes,1,0,CIRARV,60,Cirsium arvense,introduced,perennial ,forb
+2023,21,61,control,XX,yes,1,0,LOTCOR,42,Lotus corniculatus ,introduced,perennial ,legume
+2023,21,61,control,XX,yes,1,0,POAPRA,25,Poa pratensis ,introduced,perennial ,grass
+2023,21,61,control,XX,yes,1,0,DAUCAR,4,Daucus carota,introduced,biennial ,forb
+2023,21,61,control,XX,yes,1,0,PHLPRA,6,Phleum pratense,introduced,perennial ,grass
+2023,21,61,control,XX,yes,1,0,FESARU,22,Festuca arundinacea,introduced,perennial ,grass
+2023,21,61,control,XX,yes,1,0,TRIPRA,3,Trifolium pratense,introduced,biennial ,legume
+2023,21,61,control,XX,yes,1,0,CONARV,2,Convolvulus arvensis ,introduced,perennial ,forb
+2023,21,62,control,SX,yes,0,0,BARE,10,,,,
+2023,21,62,control,SX,yes,0,0,LITTER,90,,,,
+2023,21,61,control,XX,yes,1,0,POAPRA,15,Poa pratensis ,introduced,perennial ,grass
+2023,21,61,control,XX,yes,1,0,CIRARV,1,Cirsium arvense,introduced,perennial ,forb
+2023,21,61,control,XX,yes,1,0,DAUCAR,38,Daucus carota,introduced,biennial ,forb
+2023,21,61,control,XX,yes,1,0,TRIREP,5,Trifolium repens ,introduced,perennial ,legume
+2023,21,61,control,XX,yes,1,0,TAROFF,2,Taraxacum officnale ,introduced,perennial ,forb
+2023,21,61,control,XX,yes,1,0,CONARV,1,Convolvulus arvensis ,introduced,perennial ,forb
+2023,21,61,control,XX,yes,1,0,BROINE,35,Bromus inermis ,introduced,perennial ,grass
+2023,21,61,control,XX,yes,1,0,AGRGIG,23,Agrostis gigantea,introduced,perennial ,grass
+2023,21,61,control,XX,yes,1,0,TRIPRA,20,Trifolium pratense,introduced,biennial ,legume
+2023,21,61,control,XX,yes,1,0,FESARU,18,Festuca arundinacea,introduced,perennial ,grass
+2023,21,62,control,SX,yes,0,0,BARE,10,,,,
+2023,21,63,control,SB,yes,0,0,LITTER,82,,,,
+2023,21,62,control,SX,yes,1,0,FESARU,20,Festuca arundinacea,introduced,perennial ,grass
+2023,21,62,control,SX,yes,1,0,POAPRA,60,Poa pratensis ,introduced,perennial ,grass
+2023,21,62,control,SX,yes,1,0,SOLCAR,5,Solanum carolinense,native,perennial ,forb
+2023,21,62,control,SX,yes,1,0,CIRARV,24,Cirsium arvense,introduced,perennial ,forb
+2023,21,62,control,SX,yes,1,0,BROINE,16,Bromus inermis ,introduced,perennial ,grass
+2023,21,62,control,SX,yes,1,0,DAUCAR,3,Daucus carota,introduced,biennial ,forb
+2023,21,62,control,SX,yes,1,0,CICINT,6,Cichorium intybus,introduced,biennial ,forb
+2023,21,62,control,SX,yes,1,0,TRIPRA,3,Trifolium pratense,introduced,biennial ,legume
+2023,21,62,control,SX,yes,1,0,TRIREP,0.1,Trifolium repens ,introduced,perennial ,legume
+2023,21,62,control,SX,yes,1,0,CONARV,0.5,Convolvulus arvensis ,introduced,perennial ,forb
+2023,21,63,control,SB,yes,0,0,BARE,18,,,,
+2023,22,66,control,SB,yes,0,0,LITTER,75,,,,
+2023,21,62,control,SX,yes,1,0,CIRARV,4,Cirsium arvense,introduced,perennial ,forb
+2023,21,62,control,SX,yes,1,0,CIRARV,2,Cirsium arvense,introduced,perennial ,forb
+2023,21,62,control,SX,yes,1,0,DAUCAR,30,Daucus carota,introduced,biennial ,forb
+2023,21,62,control,SX,yes,1,0,TRIPRA,43,Trifolium pratense,introduced,biennial ,legume
+2023,21,62,control,SX,yes,1,0,CONARV,2,Convolvulus arvensis ,introduced,perennial ,forb
+2023,21,62,control,SX,yes,1,0,TRIREP,3,Trifolium repens ,introduced,perennial ,legume
+2023,21,62,control,SX,yes,1,0,BROINE,15,Bromus inermis ,introduced,perennial ,grass
+2023,21,62,control,SX,yes,1,0,FESARU,12,Festuca arundinacea,introduced,perennial ,grass
+2023,21,62,control,SX,yes,1,0,POAPRA,8,Poa pratensis ,introduced,perennial ,grass
+2023,21,62,control,SX,yes,1,0,DACGLO,18,Dactylis glomerata,introduced,perennial ,grass
+2023,22,66,control,SB,yes,0,0,BARE,25,,,,
+2023,22,65,control,SX,yes,0,0,LITTER,85,,,,
+2023,21,63,control,SB,yes,1,0,TRIPRA,8,Trifolium pratense,introduced,biennial ,legume
+2023,21,63,control,SB,yes,1,0,AMBART,1,Ambrosia artemisiifolia,native,annual ,forb
+2023,21,63,control,SB,yes,1,0,DAUCAR,10,Daucus carota,introduced,biennial ,forb
+2023,21,63,control,SB,yes,1,0,FESARU,50,Festuca arundinacea,introduced,perennial ,grass
+2023,21,63,control,SB,yes,1,0,BROINE,40,Bromus inermis ,introduced,perennial ,grass
+2023,21,63,control,SB,yes,1,0,CONARV,1,Convolvulus arvensis ,introduced,perennial ,forb
+2023,21,63,control,SB,yes,1,0,CIRARV,38,Cirsium arvense,introduced,perennial ,forb
+2023,21,63,control,SB,yes,1,0,LOTCOR,43,Lotus corniculatus ,introduced,perennial ,legume
+2023,21,63,control,SB,yes,1,0,POAPRA,35,Poa pratensis ,introduced,perennial ,grass
+2023,21,63,control,SB,yes,1,0,PHLPRA,4,Phleum pratense,introduced,perennial ,grass
+2023,21,63,control,SB,yes,1,0,BROINE,53,Bromus inermis ,introduced,perennial ,grass
+2023,21,63,control,SB,yes,1,0,DAUCAR,6,Daucus carota,introduced,biennial ,forb
+2023,21,63,control,SB,yes,1,0,CIRARV,4,Cirsium arvense,introduced,perennial ,forb
+2023,21,63,control,SB,yes,1,0,SOLCAN,10,Solidago canadensis ,native,perennial ,forb
+2023,21,63,control,SB,yes,1,0,FESARU,40,Festuca arundinacea,introduced,perennial ,grass
+2023,21,63,control,SB,yes,1,0,POAPRA,20,Poa pratensis ,introduced,perennial ,grass
+2023,22,65,control,SX,yes,0,0,BARE,15,,,,
+2023,22,64,control,XX,yes,0,0,LITTER,88,,,,
+2023,21,63,control,SB,yes,1,0,TRIREP,2,Trifolium repens ,introduced,perennial ,legume
+2023,21,63,control,SB,yes,1,0,TRIPRA,2,Trifolium pratense,introduced,biennial ,legume
+2023,22,64,control,XX,yes,0,0,BARE,12,,,,
+2023,22,64,control,XX,yes,1,0,Carex Spp ,22,Carex spp ,native,perennial ,grass
+2023,22,64,control,XX,yes,1,0,AMBTRI,6,Ambrosia trifida ,native,annual ,forb
+2023,22,64,control,XX,yes,1,0,AGRGIG,18,Agrostis gigantea,introduced,perennial ,grass
+2023,22,64,control,XX,yes,1,0,DAUCAR,20,Daucus carota,introduced,biennial ,forb
+2023,22,64,control,XX,yes,1,0,POAPRA,35,Poa pratensis ,introduced,perennial ,grass
+2023,22,64,control,XX,yes,1,0,AMBART,0.2,Ambrosia artemisiifolia,native,annual ,forb
+2023,22,64,control,XX,yes,1,0,FESARU,26,Festuca arundinacea,introduced,perennial ,grass
+2023,23,67,control,XX,yes,0,0,BARE,5,,,,
+2023,23,67,control,XX,yes,0,0,LITTER,95,,,,
+2023,23,69,control,SB,yes,0,0,BARE,28,,,,
+2023,23,69,control,SB,yes,0,0,LITTER,72,,,,
+2023,22,65,control,SX,yes,1,0,Carex Spp ,60,Carex spp ,native,perennial ,grass
+2023,22,65,control,SX,yes,1,0,SOLCAN,85,Solidago canadensis ,native,perennial ,forb
+2023,22,65,control,SX,yes,1,0,POAPRA,20,Poa pratensis ,introduced,perennial ,grass
+2023,22,65,control,SX,yes,1,0,FESARU,20,Festuca arundinacea,introduced,perennial ,grass
+2023,22,65,control,SX,yes,1,0,AMBART,0.4,Ambrosia artemisiifolia,native,annual ,forb
+2023,23,68,control,SX,yes,0,0,BARE,22,,,,
+2023,23,68,control,SX,yes,0,0,LITTER,78,,,,
+2023,22,66,control,SB,yes,1,0,BROINE,10,Bromus inermis ,introduced,perennial ,grass
+2023,22,66,control,SB,yes,1,0,VERURT,0.2,Verbena urticifolia ,native,perennial ,forb
+2023,22,66,control,SB,yes,1,0,SOLCAN,60,Solidago canadensis ,native,perennial ,forb
+2023,22,66,control,SB,yes,1,0,POAPRA,4,Poa pratensis ,introduced,perennial ,grass
+2023,22,66,control,SB,yes,1,0,FESARU,NA,Festuca arundinacea,introduced,perennial ,grass
+2023,22,66,control,SB,yes,1,0,DAUCAR,13,Daucus carota,introduced,biennial ,forb
+2023,22,66,control,SB,yes,1,0,TRIREP,2,Trifolium repens ,introduced,perennial ,legume
+2023,22,66,control,SB,yes,1,0,TRIPRA,10,Trifolium pratense,introduced,biennial ,legume
+2023,24,70,control,XX,yes,0,0,BARE,6,,,,
+2023,24,70,control,XX,yes,0,0,LITTER,94,,,,
+2023,24,70,control,XX,yes,1,0,ERISTR,8,Erigeron strigosus ,native,biennial ,forb
+2023,24,70,control,XX,yes,1,0,Carex Spp ,6,Carex spp ,native,perennial ,grass
+2023,24,70,control,XX,yes,1,0,FESARU,60,Festuca arundinacea,introduced,perennial ,grass
+2023,24,70,control,XX,yes,1,0,POAPRA,55,Poa pratensis ,introduced,perennial ,grass
+2023,24,70,control,XX,yes,1,0,AMBART,1,Ambrosia artemisiifolia,native,annual ,forb
+2023,24,70,control,XX,yes,1,0,DAUCAR,1,Daucus carota,introduced,biennial ,forb
+2023,24,70,control,XX,yes,1,0,Carex Spp ,5,Carex spp ,native,perennial ,grass
+2023,24,70,control,XX,yes,1,0,BROINE,15,Bromus inermis ,introduced,perennial ,grass
+2023,24,70,control,XX,yes,1,0,MONFIS,0.1,Mondarda fistulosa ,native,perennial ,legume
+2023,24,71,control,SX,yes,0,0,BARE,4,,,,
+2023,24,71,control,SX,yes,0,0,LITTER,96,,,,
+2023,24,71,control,SX,yes,1,0,Carex Spp ,5,Carex spp ,native,perennial ,grass
+2023,24,71,control,SX,yes,1,0,SOLCAN,32,Solidago canadensis ,native,perennial ,forb
+2023,24,71,control,SX,yes,1,0,POAPRA,55,Poa pratensis ,introduced,perennial ,grass
+2023,24,71,control,SX,yes,1,0,FESARU,68,Festuca arundinacea,introduced,perennial ,grass
+2023,24,71,control,SX,yes,1,0,DAUCAR,1,Daucus carota,introduced,biennial ,forb
+2023,24,71,control,SX,yes,1,0,AMBART,1,Ambrosia artemisiifolia,native,annual ,forb
+2023,24,72,control,SB,yes,0,0,BARE,3,,,,
+2023,24,72,control,SB,yes,0,0,LITTER,97,,,,
+2023,24,72,control,SB,yes,1,0,FESARU,28,Festuca arundinacea,introduced,perennial ,grass
+2023,24,72,control,SB,yes,1,0,POAPRA,70,Poa pratensis ,introduced,perennial ,grass
+2023,24,72,control,SB,yes,1,0,SOLCAN,18,Solidago canadensis ,native,perennial ,forb
+2023,24,72,control,SB,yes,1,0,LOTCOR,21,Lotus corniculatus ,introduced,perennial ,legume
+2023,24,72,control,SB,yes,1,0,BROINE,15,Bromus inermis ,introduced,perennial ,grass
+2023,24,72,control,SB,yes,1,0,TRIPRA,1,Trifolium pratense,introduced,biennial ,legume
+2023,24,72,control,SB,yes,1,0,DAUCAR,1,Daucus carota,introduced,biennial ,forb
+2023,24,72,control,SB,yes,1,0,TRIREP,0.1,Trifolium repens ,introduced,perennial ,legume
