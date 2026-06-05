@@ -378,7 +378,7 @@ anova_w24_df<-as.data.frame(anova_w24) %>% rownames_to_column("Term") %>% rename
 anova_w24_df
 
 #export to CSV 
-write.csv(anova_w24_df, "Table 1 Spec Rich Anova.csv", row.names = FALSE)
+#write.csv(anova_w24_df, "Table 1 Spec Rich Anova.csv", row.names = FALSE)
 ```
 
 Table: Post Hoc Comparisons Spec Rich 2024
@@ -391,7 +391,7 @@ pairs_w24_df<-as.data.frame(pairs_w24) %>%
   #rename(Management_Treatment = management_trt, Contrast = contrast, Estimate = estimate, SE=SE, Df= df, t_ratio = t.ratio, p_value= p.value) %>% 
   mutate(across(c(estimate, SE, t.ratio), ~round(.x, 3)), p.value=round(p.value, 4))
 
-write.csv(pairs_w24_df, "Table_S1_PostHoc_HerbMgmt_Rich24.csv", row.names = FALSE)
+#write.csv(pairs_w24_df, "Table_S1_PostHoc_HerbMgmt_Rich24.csv", row.names = FALSE)
 
 #compares management treatments to each other within herbivory treatments 
 pairs_w24m_df<-as.data.frame(pairs_w24m) %>% rename( Contrast = contrast, Estimate = estimate, SE=SE, Df= df, t_ratio = t.ratio, p_value= p.value) %>% 
@@ -480,7 +480,7 @@ Table 2: ANova Delta Richness Model
 anova_diff_df<-as.data.frame(anova_diff) %>% rownames_to_column("Term") %>%  rename(Chisq = Chisq, Df= Df, p_value= `Pr(>Chisq)`)
 
 #export to CSV 
-write.csv(anova_diff_df, "Table 2 Anova Delta Model.csv", row.names = FALSE)
+#write.csv(anova_diff_df, "Table 2 Anova Delta Model.csv", row.names = FALSE)
 ```
 
 Table: Post Hoc Comparisons Delta Richness 
@@ -496,12 +496,12 @@ contrast_diff2<- contrast(emmeans_diff2, method="pairwise", adjust="tukey")
 #herbivory and management group contrasts 
 pairs_diff1_df<-as.data.frame(contrast_diff) %>% rename(Management_Treatment = management_trt, Contrast = contrast, Estimate = estimate, SE=SE, Df= df, t_ratio = t.ratio, p_value= p.value) %>% mutate(across(c(Estimate, SE, t_ratio), ~round(.x, 3)), p_value=round(p_value, 4))
 
-write.csv(pairs_diff1_df, "Table_S5_PostHoc_HerbMgmt_DeltaRichness.csv", row.names = FALSE)
+#write.csv(pairs_diff1_df, "Table_S5_PostHoc_HerbMgmt_DeltaRichness.csv", row.names = FALSE)
 
 #herbivory only contrasts for signif main effects
 pairs_diff2_df<-as.data.frame(contrast_diff2) %>% rename( Contrast = contrast, Estimate = estimate, SE=SE, Df= df, t_ratio = t.ratio, p_value= p.value) %>% mutate(across(c(Estimate, SE, t_ratio), ~round(.x, 3)), p_value=round(p_value, 4))
 
-write.csv(pairs_diff2_df, "Table_S4_PostHoc_BetweenHerb_DeltaRich.csv", row.names = FALSE)
+#write.csv(pairs_diff2_df, "Table_S4_PostHoc_BetweenHerb_DeltaRich.csv", row.names = FALSE)
 
 
 ```
@@ -983,7 +983,7 @@ Table: PERMANOVA 2024
 permw24_df<- as.data.frame(permW24) %>% rownames_to_column("Term") %>% 
   rename(Df=Df, Sum_of_Sqs = SumOfSqs, R2 = R2, F=F, p_value= `Pr(>F)`) 
 
-write.csv(permw24_df, "Table 5 Permanova 2024.csv", row.names = FALSE)
+#write.csv(permw24_df, "Table 5 Permanova 2024.csv", row.names = FALSE)
 ```
 
 Table permdisp test
@@ -993,7 +993,7 @@ Table permdisp test
 
 full_permdisp_results_df<- as.data.frame(full_permdisp_results$tab ) %>% rownames_to_column("Term") %>%  rename( p_value= `Pr(>F)`) 
 
-write.csv(full_permdisp_results_df, "Table BEtaDispersion_2024all.csv", row.names = FALSE)
+#write.csv(full_permdisp_results_df, "Table BEtaDispersion_2024all.csv", row.names = FALSE)
 
 ```
 
@@ -1037,7 +1037,7 @@ pairwise_df_inter_csv <-pairwise_df_inter %>% mutate( sig = case_when (`Pr(>F)`<
 #keep only the model rows with the important information
 filter(!is.na(F)) %>% dplyr::select(Comparison, Df, SumOfSqs, R2, F, `Pr(>F)`, sig) 
 
-write.csv(pairwise_df_inter_csv, "Table Pairwise Permanova Interactions.csv", row.names = FALSE)
+#write.csv(pairwise_df_inter_csv, "Table Pairwise Permanova Interactions.csv", row.names = FALSE)
 ```
 
 Table Comparisons Comm Comp for Herbivory Main Effects 2024
@@ -1057,7 +1057,7 @@ pairwise_df_h_csv <-pairwise_df_h %>% mutate( sig = case_when ( `Pr(>F)`<=0.001~
 #keep only the model rows with the important information
 filter(!is.na(F)) %>% dplyr::select(Comparison, Df, SumOfSqs, R2, F, `Pr(>F)`, sig) 
 
-write.csv(pairwise_df_h_csv, "Table Pairwise Permanova Herbivory.csv", row.names = FALSE)
+#write.csv(pairwise_df_h_csv, "Table Pairwise Permanova Herbivory.csv", row.names = FALSE)
 
 ```
 
@@ -1079,7 +1079,7 @@ pairwise_df_m_csv <-pairwise_df_m %>% mutate( sig = case_when (`Pr(>F)`<=0.001~ 
 #keep only the model rows with the important information
 filter(!is.na(F)) %>% dplyr::select(Comparison, Df, SumOfSqs, R2, F, `Pr(>F)`, sig) 
 
-write.csv(pairwise_df_m_csv, "Table Pairwise Permanova Management.csv", row.names = FALSE)
+#write.csv(pairwise_df_m_csv, "Table Pairwise Permanova Management.csv", row.names = FALSE)
 
 ```
 
@@ -1306,7 +1306,7 @@ Table: PERMANOVA Subset Herbicide
 perm_herb_df<- as.data.frame(perm_herb) %>% rownames_to_column("Term") %>% 
   rename(Df=Df, Sum_of_Sqs = SumOfSqs, R2 = R2, F=F, p_value= `Pr(>F)`) 
 
-write.csv(perm_herb_df, "Table Herb Permanova.csv", row.names = FALSE)
+#write.csv(perm_herb_df, "Table Herb Permanova.csv", row.names = FALSE)
 ```
 
 Table Comparisons Comm Comp for Herbicide Subset
@@ -1327,7 +1327,7 @@ pairwise_df_herb_csv <-pairwise_df_herb %>% mutate( sig = case_when (
 #keep only the model rows with the important information
 filter(!is.na(F)) %>% dplyr::select(Comparison, Df, SumOfSqs, R2, F, `Pr(>F)`, sig) 
 
-write.csv(pairwise_df_herb_csv, "Table Pairwise Subset Herbicide.csv", row.names = FALSE)
+#write.csv(pairwise_df_herb_csv, "Table Pairwise Subset Herbicide.csv", row.names = FALSE)
 
 ```
 
@@ -1341,7 +1341,7 @@ bd_df <- as.data.frame(bd_test$tab) %>%   # $tab holds the ANOVA-style table
 rownames_to_column(var = "Term") %>% 
   rename(Sum_of_Sqs = `Sum Sq`, Mean_Sq= `Mean Sq`, p_value= `Pr(>F)`) 
 
-write.csv(bd_df, "Table S Herbicide_BetaDisp2024.csv", row.names = FALSE)
+#write.csv(bd_df, "Table S Herbicide_BetaDisp2024.csv", row.names = FALSE)
 
 
 ```
@@ -1446,7 +1446,7 @@ Table: PERMANOVA
 perm2324_df<- as.data.frame(perm2324) %>% rownames_to_column("Term") %>% 
   rename( Sum_of_Sqs = SumOfSqs,  p_value= `Pr(>F)`) 
 
-write.csv(perm2324_df, "Table SI Permanova2023_2024.csv", row.names = FALSE)
+#write.csv(perm2324_df, "Table SI Permanova2023_2024.csv", row.names = FALSE)
 ```
 
 
@@ -1594,7 +1594,7 @@ Table S #. PERMANOVA results from plant community composition in the bison  past
 permW21_df<- as.data.frame(permW21) %>% rownames_to_column("Term") %>% 
   rename( Sum_of_Sqs = SumOfSqs,  p_value= `Pr(>F)`) 
 
-write.csv(permW21_df, "Table SI Permanova2021.csv", row.names = FALSE)
+#write.csv(permW21_df, "Table SI Permanova2021.csv", row.names = FALSE)
 ```
 
 
